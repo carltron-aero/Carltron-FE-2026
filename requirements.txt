@@ -1,0 +1,8 @@
+# Python dependency inventory for the current production runner and test tools.
+# ROS 2 and libcamera must be supplied by the robot's Linux installation.
+# Export exact versions from the validated robot environment before deployment.
+numpy
+opencv-python
+gpiozero
+gpiod>=2,<3
+sparkfun-qwiic-otos
