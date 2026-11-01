@@ -1,0 +1,86 @@
+{
+  "static_held_out_placement": {
+    "reference": "Centre of the ID9 black marker square, not rear axle",
+    "user_reference_xy_mm": [
+      1550.0,
+      650.0
+    ],
+    "user_reference_uncertainty_mm_approximate": 1.5,
+    "reference_used_to_fit_or_select_mapping": false,
+    "source_measurement": "mounted-centre-comparison.json",
+    "target_height_mm_assumed": 4.825,
+    "target_height_interval_mm_from_prior_mount_measurements": [
+      4.75,
+      4.9
+    ],
+    "views": [
+      {
+        "physical_camera": 1,
+        "detected_frames": [
+          242,
+          242
+        ],
+        "estimated_marker_centre_xy_mm": [
+          1551.7735754408377,
+          649.9222752932128
+        ],
+        "estimated_minus_user_reference_xy_mm": [
+          1.7735754408377,
+          -0.0777247067872
+        ],
+        "stationary_floor_projection_radial_p95_mm": 0.370796458201039
+      },
+      {
+        "physical_camera": 2,
+        "detected_frames": [
+          241,
+          241
+        ],
+        "estimated_marker_centre_xy_mm": [
+          1550.7888701443885,
+          649.5361504184693
+        ],
+        "estimated_minus_user_reference_xy_mm": [
+          0.7888701443885,
+          -0.4638495815307
+        ],
+        "stationary_floor_projection_radial_p95_mm": 0.3389785142430417
+      }
+    ],
+    "intercamera_disagreement_mm": 1.0577036162133295,
+    "qualification": "One operating-height withheld placement using unchanged frozen mappings. Residuals are comparable to the approximately 1.5 mm placement uncertainty. Results do not certify submillimetre absolute accuracy, whole-field accuracy, heading or dynamic timing. Height correction still uses rough camera mounts."
+  },
+  "stationary_endpoint_comparison": {
+    "reference": "Rear axle midpoint: marker centre plus 100.72 mm forward",
+    "marker_height_mm_used": 4.825,
+    "camera_displacement_xy_mm": [
+      529.9421432194581,
+      224.24476145253414
+    ],
+    "displacement_comparisons": {
+      "fused": {
+        "robot_displacement_xy_mm": [
+          535.530747511483,
+          227.43677364916914
+        ],
+        "robot_minus_camera_displacement_xy_mm": [
+          5.588604292024911,
+          3.1920121966350052
+        ],
+        "displacement_disagreement_norm_mm": 6.435949020642246
+      },
+      "otos_only": {
+        "robot_displacement_xy_mm": [
+          423.9435278934259,
+          124.01258670728078
+        ],
+        "robot_minus_camera_displacement_xy_mm": [
+          -105.99861532603222,
+          -100.23217474525336
+        ],
+        "displacement_disagreement_norm_mm": 145.88418456158692
+      }
+    },
+    "qualification": "Stationary observations only. Frame spread is repeatability, not absolute accuracy. Inherited lens calibration, physical reference geometry, inferred marker yaw and approximate height correction remain uncertain. Displacements use different cameras at start and finish; cross-camera bias remains. No dynamic accuracy certificate or clock/spatial fit to XY positions."
+  }
+}

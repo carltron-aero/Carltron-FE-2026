@@ -1,0 +1,121 @@
+{
+  "views": [
+    {
+      "physical_camera": 1,
+      "parameters": [
+        0.012503162427182458,
+        -1.0586510414306025,
+        -0.003977433383385847,
+        -1.05905020690839,
+        -0.012185886427140337,
+        -0.4433657232170384,
+        -0.0030250004087028675,
+        0.005515448808806096,
+        -0.0828528934998572,
+        0.028393125516916348,
+        -0.002778899842072769,
+        0.026659086275489633
+      ],
+      "invert_function": "refine_field_features.model_invert",
+      "corner_expansion_pixels": 0.5,
+      "fixed_training_ids": [
+        0,
+        3,
+        4,
+        7
+      ],
+      "fixed_corner_training_rms_pixels": 0.443578251900878,
+      "leave_one_fixed_tag_out": {
+        "0": {
+          "corner_rms_mm": 3.2176039148947204,
+          "mean_corner_error_xy_mm": [
+            1.3626538563914963,
+            2.825847211574338
+          ]
+        },
+        "3": {
+          "corner_rms_mm": 5.797575004295226,
+          "mean_corner_error_xy_mm": [
+            3.2031898998124007,
+            -4.785210816699873
+          ]
+        },
+        "4": {
+          "corner_rms_mm": 0.7807496475232177,
+          "mean_corner_error_xy_mm": [
+            -0.3405026514095084,
+            -0.5494619401481486
+          ]
+        },
+        "7": {
+          "corner_rms_mm": 1.620808489220151,
+          "mean_corner_error_xy_mm": [
+            -0.29878246717652246,
+            1.4684571188084874
+          ]
+        }
+      },
+      "target_used_for_registration": false,
+      "lens_coefficients_changed": false,
+      "qualification": "Re-registered planar empirical mapping; fixed geometry and inherited lens remain uncertain. Changed zoom/focus is not automatically certified by small training residuals. Moving ID9, shared tags 27/28, robot logs and LED timing never fit the spatial map."
+    },
+    {
+      "physical_camera": 2,
+      "parameters": [
+        0.004237752270492435,
+        0.8899429358389559,
+        -0.005061029547269732,
+        0.8509851247207283,
+        -0.0025078214527535767,
+        -0.4512586237030272,
+        -0.15469296352188888,
+        0.0008382005399155964,
+        -0.023499753091489387,
+        0.0
+      ],
+      "invert_function": "refine_field_features.model_invert",
+      "corner_expansion_pixels": 0.0,
+      "fixed_training_ids": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "fixed_corner_training_rms_pixels": 0.5658554662423906,
+      "leave_one_fixed_tag_out": {
+        "1": {
+          "corner_rms_mm": 1.5969020627047834,
+          "mean_corner_error_xy_mm": [
+            0.933734539656939,
+            -1.056925768232846
+          ]
+        },
+        "2": {
+          "corner_rms_mm": 6.6523347928987295,
+          "mean_corner_error_xy_mm": [
+            6.226549940908058,
+            -2.115406581697016
+          ]
+        },
+        "5": {
+          "corner_rms_mm": 2.418235433433547,
+          "mean_corner_error_xy_mm": [
+            1.2381684161326234,
+            -1.8875433932406054
+          ]
+        },
+        "6": {
+          "corner_rms_mm": 2.620090023752874,
+          "mean_corner_error_xy_mm": [
+            -1.0562881210847195,
+            2.2911592498325035
+          ]
+        }
+      },
+      "target_used_for_registration": false,
+      "lens_coefficients_changed": false,
+      "qualification": "Re-registered planar empirical mapping; fixed geometry and inherited lens remain uncertain. Changed zoom/focus is not automatically certified by small training residuals. Moving ID9, shared tags 27/28, robot logs and LED timing never fit the spatial map."
+    }
+  ],
+  "qualification": "Recorded October 5 views only. Inherited empirical lens model; changed zoom/focus needs revalidation."
+}

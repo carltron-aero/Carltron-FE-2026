@@ -1,0 +1,21 @@
+{
+  "campaign": "mounting-sweep-5535ed47de85",
+  "completed": false,
+  "requested_stages": 20,
+  "observed_legs": 19,
+  "mounting": {
+    "sensor_label": "existing-primary-otos",
+    "height_mm": 14.0,
+    "offset_x_m": 0.1596,
+    "offset_y_m": 0.0238,
+    "offset_h_deg": -134.1,
+    "linear_scalar": 1.068,
+    "angular_scalar": 0.99582
+  },
+  "changes_from_previous": {
+    "additional_forward_mm": 1.9,
+    "additional_left_mm": 39.9,
+    "rotation_deg": 45
+  },
+  "qualification": "Orientation, lever arm and floor track changed together; not an isolated orientation comparison."
+}

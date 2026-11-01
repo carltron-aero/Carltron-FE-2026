@@ -1,0 +1,148 @@
+CARLTRON CAMERA CONTROL
+
+Double-click Start-Camera-Control.cmd. It starts a hidden local server and opens
+Microsoft Edge at http://localhost:8765. Windows PowerShell and Python must be
+available. Install ../requirements.txt first. FFmpeg comes from imageio-ffmpeg;
+CARLTRON_FFMPEG optionally selects a different executable.
+The app reads current controls on startup; it does not home/reset the camera.
+Unplugging/reconnecting the camera is supported: the app checks every 2.5 seconds
+while visible and automatically rebuilds a failed driver connection. Rediscover
+cameras forces a fresh connection and capability scan without restarting the app.
+The selected camera is remembered by its device path, not its list number. If its
+Windows identifier changes (for example after changing USB ports), Rediscover
+cameras reconnects it when only one PTZ Pro 2 is available. If several are
+available, choose the intended camera from the refreshed Camera list. Automatic
+recovery never silently switches to a different device identifier.
+Disconnected cameras lose their controls until they return. Arrow-key movement
+defaults ON for each connected camera (including after reconnecting); uncheck it
+to disable. It ignores keys while editing fields/dropdowns or using Ctrl/Alt.
+Absolute movement still requires explicit session enablement. No settings, queued commands
+or movements are restored/replayed. A disconnected preview must be started again
+explicitly with Start preview; the app does not request camera access on its own.
+Close app in the bottom bar stops the background server. Closing only the browser
+tab leaves the local server running so it can still be used programmatically.
+
+Live preview is optional. Click Start preview. The single Camera selector binds
+both preview and every control to the same physical Windows USB identifier.
+Native local capture replaces the old independent browser preview selector; no
+browser/DirectShow list-order matching is used. Changing the selected camera
+switches a running preview as well. A stale camera command is rejected, never
+redirected to a different device selected by another tab. Nothing is uploaded.
+The web preview is 1920x1080 at 15 fps; native capture is 30 fps. This preview is
+not the synchronized measurement recorder. If another app owns the camera, stop
+its camera capture before starting preview, or simply use its view (e.g. OBS).
+Starting capture can make a camera driver reset values: check settings afterward.
+
+Sliders apply on release. +/- uses one driver-supported step. +/-10 uses ten.
+Numeric fields apply with Enter or Apply. Disable Auto to unlock manual controls.
+Exposure buttons select a nominal shutter duration and switch to manual exposure.
+The short exposures require enough light. Displayed read-back does not prove the
+actual per-frame exposure time; validate blur and image brightness in test clips.
+
+Pan/tilt arrows use bounded 40-400 ms pulses with stop in a finally block.
+Arrow-key movement is enabled by default while connected; it never moves without
+a key press and does not apply while editing an input or dropdown.
+Shift lengthens the pulse. + / - and PageUp / PageDown adjust zoom by one step.
+Esc sends pan/tilt stop. Stop during absolute travel is not physically verified.
+Changing camera pose, focus or zoom requires rechecking tracking calibration.
+
+Absolute pan/tilt shows logical driver feedback and the reported range/step.
+Enable absolute movement explicitly, prepare targets with sliders or numbers,
+then press Move to target. Editing targets alone never moves the camera.
+Use reported position copies the read-back into target fields without moving.
+Unsupported or unverified range descriptions leave movement disabled.
+The inspected camera reports 1-degree increments. Read-back is NOT a measured
+mechanical angle or proof that travel is complete. Wait for settling and recheck
+references. Absolute travel/repeatability have not been tested on this setup.
+
+The preview stays visible while only the right-hand settings pane scrolls.
+On narrow screens the fixed preview sits above the scrolling settings pane.
+The compact status bar truncates long messages; hover to read the full message.
+
+Save snapshot writes a timestamped JSON file to output/tracking/camera-control.
+Saved views at the top of the settings pane are named local presets, retained
+across app restarts in output/tracking/camera-control/presets. Save current view
+only reads the current camera; selecting a saved view only displays its details.
+Restore full view requires confirmation and includes saved zoom, focus, logical
+pan/tilt and supported image controls. Nothing is restored on startup, camera
+reconnection or selection. Restoration checks all ranges before writing, saves a
+before-restore snapshot, skips already-matching controls and stops on any failure
+without retrying or automatically undoing commands. A failed restore can leave a
+partially restored camera; read settings and recheck it before continuing.
+Auto white balance/exposure remain automatic when saved that way. Gain is not
+replayed under saved auto exposure: the camera changes it automatically even
+when the Windows gain row reports manual. Use manual exposure for repeatability.
+These are software presets, not internal hardware presets. Pan/tilt read-back is
+logical only; restoring a view cannot guarantee identical pixels or physical
+position. Always wait for settling and recheck field-reference markers afterward.
+Export settings downloads a portable JSON snapshot. Load settings requires an
+explicit confirmation and saves a before-restore snapshot. It restores supported
+image/lens settings, NOT the pan/tilt pose or a hardware PTZ preset.
+Every successful adjustment is logged to actions.jsonl in the same output folder.
+The server only listens on 127.0.0.1. Writes require a session key and same-origin
+requests. No cloud service, firmware patch, registry change or driver install.
+
+PROGRAMMATIC CONTROL
+GET /api/session returns the current session key, selected device and app info.
+GET /api/state reads supported settings.
+GET /api/presets lists named local views without changing the camera.
+It also returns the fresh camera list and connection status; an absent camera
+returns state:null, not a permanent server failure. Read requests may reconnect
+the driver, but never apply settings or camera movements.
+POST /api/action with Content-Type application/json and X-Carltron-Key header:
+Every camera-scoped write, snapshot, save-preset and preview-start also requires
+device_path equal to state.Device.Path from the currently selected camera. Add
+this field to the examples below. Missing/stale identities are rejected BEFORE
+any adjustment; commands are never automatically replayed.
+  {"action":"set","group":"camera","id":4,"value":-10,"auto":false}
+  {"action":"set","group":"camera","id":6,"value":51,"auto":false}
+  {"action":"jog","pan":1,"tilt":0,"duration":80,"speed":1}
+  {"action":"stop"}
+  {"action":"rediscover"}
+  {"action":"snapshot","label":"before-exposure-test"}
+  {"action":"save-preset","name":"Full field view"}
+  {"action":"extended","id":19,"value":0}
+  {"action":"absolute","pan":43200,"tilt":-25200,"confirmed":true}
+  {"action":"shutdown"}
+  {"action":"preview-start"}
+preview-start returns a token and the verified physical device path. Display
+GET /api/preview?token=TOKEN for its local MJPEG stream; preview-stop requires
+the same token. Stale tokens cannot stop a newer preview. Closing a view stops
+its owned capture; changing cameras or losing the device clears old frames.
+Setting IDs/ranges come from /api/state; unsupported values are rejected.
+Absolute pan/tilt values use signed integer ARCSECONDS, not degrees or pixels.
+The example moves to +12/-7 degrees: it is a movement command, not a probe.
+To restore a named view explicitly, use action:apply-preset, its returned id,
+confirmed:true and device_path matching the currently selected physical camera.
+If the saved device identifier differs, allow_different_device:true also requires
+explicit user confirmation that this is the intended camera. Never auto-restore.
+Absolute movement requires confirmed:true and verified live ranges/steps.
+Read-back values/modes and action timestamps are saved, not camera exposure
+midpoints. This app is a control/preview tool, not a synchronized metrology recorder.
+
+CAPTURE MODES AND LIMITATIONS
+Windows capture exposes 1920x1080 at 30 fps in YUY2 and NV12.
+Raw USB descriptors advertise additional sizes, but none above 30 fps.
+2304x1296 and 2304x1536 at 2 fps are advertised, not captured on Windows.
+No reproducible model-specific SDK/firmware FPS unlock was found.
+Research findings and read-only vendor capability bytes are available in the app.
+Unknown native-mode, RightLight, crop and compression controls cannot be written.
+Hardware preset storage and animation sequencing are not implemented.
+No claim is made that all undocumented firmware capabilities have been discovered.
+
+TECHNICAL SOURCES
+https://learn.microsoft.com/en-us/windows/win32/api/strmif/nn-strmif-iamcameracontrol
+https://learn.microsoft.com/en-us/windows/win32/api/strmif/nn-strmif-iamvideoprocamp
+https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty
+https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_s
+https://learn.microsoft.com/en-us/windows-hardware/drivers/stream/ksproperty-cameracontrol-pan-relative
+https://learn.microsoft.com/en-us/windows-hardware/drivers/stream/ksproperty-cameracontrol-auto-exposure-priority
+https://www.logitech.com/en-us/products/video-conferencing/conference-cameras/ptz-pro2-conferencecam.html
+https://support.logi.com/hc/en-001/articles/360025127214-PTZ-Pro-2-Firmware-Upgrade
+https://ir.logitech.com/news/news-details/2016/Logitech-Collaboration-Program-Welcomes-15-New-Technology-Partners/default.aspx
+
+VERIFICATION
+test_server.py and test_absolute.ps1 run without a camera connection.
+The Python tests use a fake controller; the PowerShell test validates the
+absolute-position payload without creating a camera session.
+The setup and tracking tutorial is in docs/tracking/README.md at repository root.

@@ -1,0 +1,27 @@
+{
+  "run_id": "breakaway-03443b8eb4b4",
+  "motor": "Pololu #4841 installed, first recorded floor run",
+  "measured_duties_percent": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
+  ],
+  "measurements_completed": 11,
+  "stop_reasons": {
+    "no_motion_timeout": 4,
+    "endpoint_reached": 7
+  },
+  "observed_breakaway_bracket_percent": {
+    "no_relevant_vehicle_motion_observed_up_to": 53,
+    "first_measured_duty_with_clear_vehicle_motion": 54,
+    "qualification": "One ascending sweep, two-second trials, current battery/load/surface. Not a repeatability result or proof of no slower motion with other excitation."
+  }
+}

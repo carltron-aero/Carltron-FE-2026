@@ -1,0 +1,43 @@
+{
+  "selected": "increments-map15",
+  "selected_profile": {
+    "velocity_source": "position_increment",
+    "map_xy_sigma_m": 0.015,
+    "map_yaw_sigma_deg": 0.5
+  },
+  "models": {
+    "scale-angle": {
+      "profile": {
+        "velocity_scale": 0.9947033883132003,
+        "velocity_angle_deg": 0.17809216953373438
+      },
+      "accepted_bounds": true,
+      "condition": 1.0,
+      "median_component_residual_mm": 3.263424648002911,
+      "intervals": 48
+    },
+    "scale-angle-lever": {
+      "profile": {
+        "velocity_scale": 1.0055428922750653,
+        "velocity_angle_deg": -1.044742056028876,
+        "lever_x_m": -0.02674032784619489,
+        "lever_y_m": -0.01098483745596597
+      },
+      "accepted_bounds": true,
+      "condition": 2.525233842152376,
+      "median_component_residual_mm": 2.3149166066112303,
+      "intervals": 48
+    },
+    "gyro-scale-bias": {
+      "profile": {
+        "gyro_scale": 1.000488992547372,
+        "gyro_bias_dps": 1.019938553427818
+      },
+      "accepted_bounds": false,
+      "condition": 6.2373700700309715
+    }
+  },
+  "selection": "Exploratory joint development comparison; no claim of independent held-out selection. New physical run is the prospective test.",
+  "otos_position_and_velocity_not_independent": true,
+  "nonlinear_model": "Not fitted: these curve runs have one steady operating speed and one turning direction."
+}

@@ -1,0 +1,44 @@
+Carltron paired-camera run replay
+
+Open http://127.0.0.1:8770 while the replay server is running.
+To restart it later, run Start-Run-Replay.ps1 in this directory.
+
+The default dataset contains inspected keyframes from the first paired run and
+its complete analyzed position traces. It is not the complete video recording.
+The displayed frame offset can therefore be much larger than in a full replay.
+Use --run PATH to open an original local run archive instead.
+The shared slider covers the analyzed driving portion of the first paired run.
+Space toggles playback. Left/right arrows step through Camera 1's recorded
+frames, selecting the nearest timestamped Camera 2 frame at each step.
+Each panel displays its saved frame index, time and offset from the scrubber.
+
+Map coordinates refer to the rear axle midpoint, not the marker centre.
+Matching coloured crosses show each camera's detected marker centre, with a
+short dashed connector to its rear-axle symbol. The crosses follow the same
+recorded frame and disappear whenever that camera loses the marker.
+The outline and centre dot in each video panel show the printed marker.
+The marker-to-axle translation is 100.72 mm forward. Mount yaw is visually
+established, not independently surveyed. Height compensation uses 4.825 mm
+and approximate camera mounting positions.
+
+Robot rows are interpolated for viewing. Camera measurements are not
+interpolated: missing detections have no current marker on the map, and
+trajectory lines break at missing detections or gaps over 150 ms.
+The whole-run outline is a faint context trace; bright trails end at the
+selected time. Checkboxes control visibility without removing table values.
+
+The clock alignment is estimated from LEDs, not synchronized exposure times.
+The displayed frame delta is only the frame-selection offset; it does not
+represent total synchronization accuracy. Individual LED matches scatter by
+tens of milliseconds. No spatial or temporal fit forces the traces to agree.
+The map is schematic, not a measured model of the physical barriers.
+The Printed lines option displays vector geometry extracted from the original
+field PDF: green contours, plain lines representing the dotted grid, and
+placement outlines. Blue/orange corner lines are omitted from the map.
+This is nominal print geometry, not warped to the actual
+mat's strip scaling or seams. It never changes the camera calibration.
+
+This server is read-only and bound to localhost. It reads original recorded
+JPEG bytes by their receipt index, without converting/re-encoding frames.
+It never opens cameras, sends camera controls, connects to the robot, uploads
+recordings, modifies calibrations or changes the saved run evidence.

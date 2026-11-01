@@ -1,0 +1,251 @@
+{
+  "campaign": "target-speed-023e07ee1b45",
+  "statistics": {
+    "scheduled_measurements": 6,
+    "physical_attempts": 6,
+    "returns_verified": 6,
+    "stop_reasons": {
+      "optical_endpoint": 6
+    },
+    "primary_windows_available": 4,
+    "primary_windows_unavailable": 2,
+    "primary_optical_speed_gate_passed": 4,
+    "read_hz_range": [
+      149.87911361853077,
+      150.40629869492307
+    ],
+    "maximum_native_gap_ms": 8.058178999988286,
+    "native_recording_faults": 0,
+    "status_snapshots": 243,
+    "status_fault_bits": 0,
+    "minimum_brake_write_ms": 0.3380149999969717,
+    "maximum_brake_write_ms": 4.4473710000261235,
+    "old_battery_median_abs_longitudinal_mm": 5.732817597197792,
+    "fresh_median_abs_longitudinal_mm": 3.609174233164536,
+    "fresh_maximum_abs_longitudinal_mm": 5.807093071702685,
+    "fresh_absolute_lateral_range_mm": [
+      14.587904546905294,
+      29.95107063828264
+    ],
+    "maximum_native_overshoot_mps": 0.07469044212641762,
+    "maximum_actual_drive_duty_percent": 71.43599999999999
+  },
+  "paired": [
+    {
+      "stage": 1,
+      "target_mps": 0.7,
+      "repeat": 1,
+      "old_battery_optical_mps": 0.6323968345982719,
+      "fresh_optical_mps": 0.7105095733807274,
+      "fresh_primary_window_available": true,
+      "fresh_primary_window_s": [
+        1.017154020999999,
+        2.2930352930000053
+      ],
+      "fresh_native_peak_mps": 0.7392808158854342,
+      "fresh_native_overshoot_mps": 0.039280815885434195,
+      "fresh_native_time_to_10_percent_s": 0.059610877927867234,
+      "fresh_end_longitudinal_mm": 0.6543766626492253,
+      "fresh_end_lateral_mm": 21.91616608991845,
+      "fresh_integrator_limit_fraction_in_primary_interval": 0.0,
+      "fresh_integrator_median_duty_percentage_points": -0.1749600534711105,
+      "fresh_full_duty_limit_fraction": 0.0,
+      "posthoc_short_window": null,
+      "posthoc_short_timing_variations": null
+    },
+    {
+      "stage": 2,
+      "target_mps": 0.9,
+      "repeat": 1,
+      "old_battery_optical_mps": 0.8065745273076332,
+      "fresh_optical_mps": 0.9277864559846895,
+      "fresh_primary_window_available": true,
+      "fresh_primary_window_s": [
+        1.2012635529999927,
+        1.8609656049999928
+      ],
+      "fresh_native_peak_mps": 0.9515169172689949,
+      "fresh_native_overshoot_mps": 0.05151691726899488,
+      "fresh_native_time_to_10_percent_s": 0.07463704204406005,
+      "fresh_end_longitudinal_mm": -1.4503561081684602,
+      "fresh_end_lateral_mm": 15.22985844726919,
+      "fresh_integrator_limit_fraction_in_primary_interval": 0.0,
+      "fresh_integrator_median_duty_percentage_points": 0.2961866632735255,
+      "fresh_full_duty_limit_fraction": 0.0,
+      "posthoc_short_window": null,
+      "posthoc_short_timing_variations": null
+    },
+    {
+      "stage": 3,
+      "target_mps": 1.1,
+      "repeat": 1,
+      "old_battery_optical_mps": 0.995366576696498,
+      "fresh_optical_mps": null,
+      "fresh_primary_window_available": false,
+      "fresh_primary_window_s": [
+        1.4076539400000059,
+        1.6260720270000093
+      ],
+      "fresh_native_peak_mps": 1.1746904421264177,
+      "fresh_native_overshoot_mps": 0.07469044212641762,
+      "fresh_native_time_to_10_percent_s": 0.07271420600137783,
+      "fresh_end_longitudinal_mm": 5.466624531298425,
+      "fresh_end_lateral_mm": 28.799267326877263,
+      "fresh_integrator_limit_fraction_in_primary_interval": 0.0,
+      "fresh_integrator_median_duty_percentage_points": 0.6101897251265923,
+      "fresh_full_duty_limit_fraction": 0.0,
+      "posthoc_short_window": {
+        "speed_mps": 1.1817665203131391,
+        "samples": 12,
+        "observed_span_s": 0.35200869999971474,
+        "requested_window_s": [
+          1.3260720270000093,
+          1.7260720270000092
+        ]
+      },
+      "posthoc_short_timing_variations": [
+        {
+          "speed_mps": 1.1817665203131391,
+          "samples": 12,
+          "observed_span_s": 0.35200869999971474,
+          "requested_window_s": [
+            1.3260720270000093,
+            1.7260720270000092
+          ]
+        },
+        {
+          "speed_mps": 1.1817665203131391,
+          "samples": 12,
+          "observed_span_s": 0.35200869999971474,
+          "requested_window_s": [
+            1.3260720270000093,
+            1.7260720270000092
+          ]
+        },
+        {
+          "speed_mps": 1.1787072813885089,
+          "samples": 12,
+          "observed_span_s": 0.3520100000023376,
+          "requested_window_s": [
+            1.3260720270000093,
+            1.7260720270000092
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "target_mps": 1.1,
+      "repeat": 2,
+      "old_battery_optical_mps": 0.9962632388077467,
+      "fresh_optical_mps": null,
+      "fresh_primary_window_available": false,
+      "fresh_primary_window_s": [
+        1.4053649799999903,
+        1.6741634259999956
+      ],
+      "fresh_native_peak_mps": 1.1744273067783189,
+      "fresh_native_overshoot_mps": 0.07442730677831877,
+      "fresh_native_time_to_10_percent_s": 0.07482756409971841,
+      "fresh_end_longitudinal_mm": 5.807093071702685,
+      "fresh_end_lateral_mm": 29.95107063828264,
+      "fresh_integrator_limit_fraction_in_primary_interval": 0.0,
+      "fresh_integrator_median_duty_percentage_points": 0.6195390955749115,
+      "fresh_full_duty_limit_fraction": 0.0,
+      "posthoc_short_window": {
+        "speed_mps": 1.1871258858513818,
+        "samples": 12,
+        "observed_span_s": 0.3521130999943125,
+        "requested_window_s": [
+          1.3741634259999955,
+          1.7741634259999954
+        ]
+      },
+      "posthoc_short_timing_variations": [
+        {
+          "speed_mps": 1.1870255955323865,
+          "samples": 13,
+          "observed_span_s": 0.38405389999388717,
+          "requested_window_s": [
+            1.3741634259999955,
+            1.7741634259999954
+          ]
+        },
+        {
+          "speed_mps": 1.1871258858513818,
+          "samples": 12,
+          "observed_span_s": 0.3521130999943125,
+          "requested_window_s": [
+            1.3741634259999955,
+            1.7741634259999954
+          ]
+        },
+        {
+          "speed_mps": 1.1871258858513818,
+          "samples": 12,
+          "observed_span_s": 0.3521130999943125,
+          "requested_window_s": [
+            1.3741634259999955,
+            1.7741634259999954
+          ]
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "target_mps": 0.9,
+      "repeat": 2,
+      "old_battery_optical_mps": 0.8035033841420771,
+      "fresh_optical_mps": 0.927102928722864,
+      "fresh_primary_window_available": true,
+      "fresh_primary_window_s": [
+        1.2009504220000509,
+        1.9101418009999975
+      ],
+      "fresh_native_peak_mps": 0.9462226171226074,
+      "fresh_native_overshoot_mps": 0.046222617122607335,
+      "fresh_native_time_to_10_percent_s": 0.06979674671293584,
+      "fresh_end_longitudinal_mm": -4.2305949592491565,
+      "fresh_end_lateral_mm": 14.587904546905294,
+      "fresh_integrator_limit_fraction_in_primary_interval": 0.0,
+      "fresh_integrator_median_duty_percentage_points": 0.31493101387815037,
+      "fresh_full_duty_limit_fraction": 0.0,
+      "posthoc_short_window": null,
+      "posthoc_short_timing_variations": null
+    },
+    {
+      "stage": 6,
+      "target_mps": 0.7,
+      "repeat": 2,
+      "old_battery_optical_mps": 0.6239461595415704,
+      "fresh_optical_mps": 0.7065685661751673,
+      "fresh_primary_window_available": true,
+      "fresh_primary_window_s": [
+        1.0129432770000222,
+        2.3570128790000124
+      ],
+      "fresh_native_peak_mps": 0.7350057529271312,
+      "fresh_native_overshoot_mps": 0.03500575292713126,
+      "fresh_native_time_to_10_percent_s": 0.05570136078510432,
+      "fresh_end_longitudinal_mm": -2.9877535070799155,
+      "fresh_end_lateral_mm": 18.647875320545513,
+      "fresh_integrator_limit_fraction_in_primary_interval": 0.0,
+      "fresh_integrator_median_duty_percentage_points": -0.11135901954648102,
+      "fresh_full_duty_limit_fraction": 0.0,
+      "posthoc_short_window": null,
+      "posthoc_short_timing_variations": null
+    }
+  ],
+  "conditions": {
+    "operator_confirmed_fresh_battery": true,
+    "old_battery_condition": "Operator confirmed previous battery",
+    "identical_speed_and_mounting_profile_hashes": true,
+    "speed_profile_sha256": "0ec05196a3b43977a1bf847e68af9c97cfab20a1d33502c7d434e99817550192",
+    "mounting_profile_sha256": "600dceb562b11b5864ced4a77a2126399d99f1b41521aed694965ec4a65065f3",
+    "voltage_or_exact_soc_measured": false,
+    "internal_camera": false,
+    "encoder": false,
+    "simultaneous_live_fusion": false
+  },
+  "qualification": "Primary minimum-0.4-s window and fixed reference/timing retained. The separate 1.1-m/s short-window fit is post-hoc descriptive evidence, not a passed steady-state test. Native peaks are sensor-reported, not independently certified physical overshoot. These are local relative-displacement checks, not whole-field 2D accuracy."
+}

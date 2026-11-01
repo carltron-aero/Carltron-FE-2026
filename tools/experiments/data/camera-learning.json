@@ -1,0 +1,120 @@
+{
+  "eligible": 162,
+  "classical": {
+    "eligible": 162,
+    "predictions": 47,
+    "coverage": 0.29012345679012347,
+    "missing": 115,
+    "median_signed_sd_mm": [
+      -6.334480010482821,
+      2.3549548689894095
+    ],
+    "median_abs_sd_mm": [
+      9.714616948955836,
+      3.0253630775259808
+    ],
+    "p95_abs_sd_mm": [
+      35.7024697090206,
+      42.95171936019959
+    ],
+    "planar_p50_p95_max_mm": [
+      14.995335772515885,
+      54.22183525815067,
+      56.606135284479734
+    ],
+    "fraction_within10_all": 0.10493827160493827,
+    "fraction_within10_predicted": 0.3617021276595745,
+    "errors_over50": 4,
+    "fraction_over50_all": 0.024691358024691357
+  },
+  "methods": {
+    "original": {
+      "eligible": 162,
+      "predictions": 162,
+      "coverage": 1.0,
+      "missing": 0,
+      "median_signed_sd_mm": [
+        -55.659423641075364,
+        5.584240484738871
+      ],
+      "median_abs_sd_mm": [
+        97.32068747954497,
+        13.525115473124742
+      ],
+      "p95_abs_sd_mm": [
+        231.10376327583728,
+        54.32492328665699
+      ],
+      "planar_p50_p95_max_mm": [
+        98.2716269021914,
+        231.80041464699536,
+        428.201949212458
+      ],
+      "fraction_within10_all": 0.006172839506172839,
+      "fraction_within10_predicted": 0.006172839506172839,
+      "errors_over50": 140,
+      "fraction_over50_all": 0.8641975308641975
+    },
+    "density-control": {
+      "eligible": 162,
+      "predictions": 162,
+      "coverage": 1.0,
+      "missing": 0,
+      "median_signed_sd_mm": [
+        -3.1670443996323456,
+        -29.137978320998343
+      ],
+      "median_abs_sd_mm": [
+        39.303450553649554,
+        31.091076472666316
+      ],
+      "p95_abs_sd_mm": [
+        267.8261155781144,
+        60.265150441324195
+      ],
+      "planar_p50_p95_max_mm": [
+        46.85567360449961,
+        272.8129843404425,
+        578.2955383540734
+      ],
+      "fraction_within10_all": 0.0,
+      "fraction_within10_predicted": 0.0,
+      "errors_over50": 80,
+      "fraction_over50_all": 0.49382716049382713
+    },
+    "fullrate-spatial-holdout": {
+      "eligible": 162,
+      "predictions": 162,
+      "coverage": 1.0,
+      "missing": 0,
+      "median_signed_sd_mm": [
+        -2.2789310859878924,
+        27.81158863706429
+      ],
+      "median_abs_sd_mm": [
+        122.44811901549156,
+        27.81158863706429
+      ],
+      "p95_abs_sd_mm": [
+        223.7392357266832,
+        70.45250323525504
+      ],
+      "planar_p50_p95_max_mm": [
+        125.59544125779567,
+        223.88252706212307,
+        281.86892585543677
+      ],
+      "fraction_within10_all": 0.018518518518518517,
+      "fraction_within10_predicted": 0.018518518518518517,
+      "errors_over50": 130,
+      "fraction_over50_all": 0.8024691358024691
+    }
+  },
+  "pending_experiments": [
+    {
+      "experiment": "fullrate-source-holdout",
+      "evaluated": false
+    }
+  ],
+  "qualified_for_control": false
+}

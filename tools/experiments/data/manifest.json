@@ -1,0 +1,153 @@
+{
+  "format": "carltron-selected-experiments-20261027-v1",
+  "date": "2026-10-27",
+  "files": {
+    "braking.json": "64b376aea3cf07cbae96250652294eae202c5bd4a2271c007cc9da6eb95b4379",
+    "breakaway.json": "0402469f3bcfb2ef354ef37febf2e667e501b25593a4416143de65ca245daef3",
+    "camera-learning.json": "b998752ba58af282f53fa0fa5954d5cfb4343e1b5f94d6d18f822cbbd03869c7",
+    "camera-modes.json": "bca012e0202b00b97966f051abb3733a4a5ae35f16e962c2bb5864c8b2235307",
+    "curve-pilots.json": "89b4beba5bcfe91d0f785c4aefedd4d78f630fc200dd791e1c867f232757776f",
+    "curve-stop.json": "fa507cda06b0f784278a8f64e7089cf6da10de8c93a69ba93b3c96f90cf2bc16",
+    "drive-coast-brake.json": "4ea14871c34e2ce62208c38b44cbcb47818cfc1c9edc4a823da73d80b4a479ea",
+    "encoder-ab.json": "b043089ef58957b32aee4ccb196ece5f578295a967decfe7350509cbd465444d",
+    "fusion-development.json": "2bc2ca2d31ca4d02e8ef9371bb57b079156f3d1f112ffefa5712f248bc8940dd",
+    "initial-breakaway.json": "3c5958acf71790710505926d1c0e7de4118b8e2132b68ff90cb34ba6ed83cae4",
+    "mounting-heights.json": "83c4f10245f68250cd174ae014e16bcb9cce3cf8a6d208cce5eaa654caffdc6a",
+    "original-motor-floor.json": "ea2ff25987cbcc19fb4f2b8f181359033d89afe568fe2e85faf30d113d26d53d",
+    "raised-motors.json": "09cd4f2bcdd032bf9cebc7b065731bdef26da4c88b3b8ad66360b9b3bb0aed24",
+    "recovery-replay.json": "5555028344ce31958fe978ffac378e3557dad8ba2b953b1ae66b7272ef596ad2",
+    "rotated-mount.json": "52e3d23cd663beb7cad5d3f6961b3a912220235caf8d89566da10e84065ec0f7",
+    "target-speed.json": "b165a56af0645367819321c91cc7dcc56bcfc65764754c12b04d51c9e2ab0de3"
+  },
+  "source_reports": [
+    {
+      "artifact": "encoder-ab-v37/encoder-ab-59ecc9a060a3-review/metrics.json",
+      "sha256": "0d1806420092e5edeab4b86f8ec97c6762cd98226b8c9548656a6e79463a2f19"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/height-10-vs-14-20261026/results.json",
+      "sha256": "c301ac9729942187d1c78e032fb3af57ae85faacfc2266c1c954c19359eca17f"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/spare-wheel-fixed-20261026/metrics.json",
+      "sha256": "e23bd6367046cd9d38faf1b3864d3499560ff8606bcfff52b21b5fb7daec36c6"
+    },
+    {
+      "artifact": "mounting-dashboard/parts-wheel-fixed-20261026/runs/mounting-sweep-5ee6624911ab/6bffe1d773e359bb/stage-07/otos-native.csv",
+      "sha256": "46652f2604bb66d1cee594d2951ad17891519cd23a0c32ef9d8d5459ee5987de"
+    },
+    {
+      "artifact": "mounting-dashboard/parts-wheel-fixed-20261026/runs/mounting-sweep-5ee6624911ab/6bffe1d773e359bb/stage-07/optical-poses.csv",
+      "sha256": "191602224ba0fac0231bd449ca1597656645830c77823e10fc632cfa468a9619"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-d3f186b73d6f/db09513d4239817a/metrics.json",
+      "sha256": "76810c240a33979293ea83eef5081633b24ac7fa6affef6ff71e43ce709680f2"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-d3f186b73d6f/db09513d4239817a/stage-07/otos-native.csv",
+      "sha256": "4c6692832141580e0aedbc20830efcc1a16571317c453d5a66d204dfc96a6dda"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-d3f186b73d6f/db09513d4239817a/stage-07/optical-poses.csv",
+      "sha256": "8acbdbb42aebfd630ea9a8bdf01c82e5623a06a8aeb8598feb74f956d6639ef8"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-cd40e88c646d/781b02eba1379bcd/metrics.json",
+      "sha256": "c3e526f4371d6a56679eafffa333bc9c5d06a076e26a0f32be49c2d12a7204a6"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-cd40e88c646d/781b02eba1379bcd/stage-07/otos-native.csv",
+      "sha256": "de42f54ef61a8b2c2b50d547eb0ef0cc38cf7087cbcfc452db42881ec40f3dfd"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-cd40e88c646d/781b02eba1379bcd/stage-07/optical-poses.csv",
+      "sha256": "7df5bca37bd1ef74189e5033522b35c048ba4e0fc5365b7ee996c51fceb83d7b"
+    },
+    {
+      "artifact": "installed-motor-review-20261024/summary.json",
+      "sha256": "16c71984f75ea15ed98f5d34ea34a082cb7b01dbf4ffaaf3f4eb6bf1cf6fbdc6"
+    },
+    {
+      "artifact": "motor-review-20261024/optical-comparison/per-duty-comparison.csv",
+      "sha256": "4365652f0301be319a7bb425eb8356932eaed142f4a91ec69c1156bc11a810e7"
+    },
+    {
+      "artifact": "motor-review-20261024/optical-comparison/summary.json",
+      "sha256": "2f4bbc870f0cd2514f9f201c7e3005c5ac76cf090dc17ffa93f9ff1f4ff9188b"
+    },
+    {
+      "artifact": "breakaway-03443b8eb4b4-review/result.json",
+      "sha256": "1528da8914813da4ecd165aed1b029132a35965c28799016001daccc12e06975"
+    },
+    {
+      "artifact": "breakaway-607dd218c9f2-review/start-hold-results/phase-speeds.csv",
+      "sha256": "db81f866542c8b64fd3c43d3d6766ae5fada20202390085d27c0e48215586978"
+    },
+    {
+      "artifact": "breakaway-1bfa4a86528d-review/results/phase-speeds.csv",
+      "sha256": "50010ac26d771bf28d856e1df8efc0b56ad45ad6deb324bb8c4e17c795ed21ec"
+    },
+    {
+      "artifact": "pwm-compare-03c0875e94b6-review/results-v3/speed-comparison.csv",
+      "sha256": "a8f2fe64d11dfb0682a3507a9af0d4934fb928bca1f885f373eb7bfd7a14e983"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/brake-20261026/results.json",
+      "sha256": "2415077a0a01a1a627c84e8c182ee47cf74726af5e5a82f5b006f5178bb8f692"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/target-speed-v50-fresh-20261027/comparison.json",
+      "sha256": "aca83115b549b4bad016497ab8b9b24eafa8c27c2f14658986dd6432559a5024"
+    },
+    {
+      "artifact": "ml-localization-fullrate/consolidated-audit-preliminary.json",
+      "sha256": "c61f162ac29873930607edfebf9603bc2baf2604c645889bcdda06870202762c"
+    },
+    {
+      "artifact": "camera-resolution-comparison/sources.json",
+      "sha256": "2bce47fb5df8419dd398f44674923af30d77b90a4221908785d4a4dfc572f356"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/curve-pilot-f02b4f1b3a7a/metrics.json",
+      "sha256": "ba17b0b5968cf9c1f2d4a5482f98fe40d8f0e051d2b0fd889dd2767b3a28c234"
+    },
+    {
+      "artifact": "curve-pilot-v51/robot-runs/curve-pilot-f02b4f1b3a7a/campaign.json",
+      "sha256": "23778cd6fd728dcad5275d6217eda309866a1bd17845de682215154831718919"
+    },
+    {
+      "artifact": "curve-pilot-v51/curve-pilot-f02b4f1b3a7a-verification.json",
+      "sha256": "8c371d35919c0dbef300c5ea7d60542cf405b3e7b0392d813e0d9dacfd3f8964"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/curve-pilot-c05282da0704/metrics.json",
+      "sha256": "871768832bb2e946e780e3008a394da00ab29eea044ecd3131bbefe536af5be1"
+    },
+    {
+      "artifact": "curve-pilot-v51/robot-runs/curve-pilot-c05282da0704/campaign.json",
+      "sha256": "8ba29da719eb775ffcb3c7cf1c437dfcbacee5a194b181fdd21a76efc6fd5459"
+    },
+    {
+      "artifact": "curve-pilot-v51/curve-pilot-c05282da0704-verification.json",
+      "sha256": "66f789278d63f930d9dc5ec518e117119ddee83faf54758d20da0093a1dfe0d9"
+    },
+    {
+      "artifact": "mounting-dashboard/comparisons/curve-pilot-c05282da0704/brake-incident-metrics.json",
+      "sha256": "1734a056d1356965f8a5633ec26310e84f13a2bd9309315a7338a7a71292d6ef"
+    },
+    {
+      "artifact": "curve-fusion-v52/results.json",
+      "sha256": "22467f58b75d81d08f1d4628d691f5af32155c3e1541eb7dc863d0d872ce94ee"
+    },
+    {
+      "artifact": "curve-recovery-v54/results.json",
+      "sha256": "b6fa4dbb8ac727ad1fe867dbbe1d59fd2b60c6e27e823826c20fd1ffc3fb4f54"
+    },
+    {
+      "artifact": "mounting-dashboard/runs/mounting-sweep-5535ed47de85/5717ac660a5d93f6/metrics.json",
+      "sha256": "e095852097d43fdcdf6182f804c64100e1459d31b10c0de70cf1168fee345990"
+    }
+  ],
+  "scope": "Selected numerical exports from completed analyses. Raw videos and native sensor archives are not part of this export. No new physical tests."
+}

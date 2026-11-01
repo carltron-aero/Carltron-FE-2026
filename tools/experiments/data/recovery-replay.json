@@ -1,0 +1,100 @@
+{
+  "runs": [
+    {
+      "campaign": "curve-pilot-b442b6582709",
+      "scores": {
+        "baseline": {
+          "median_mm": 12.964103940024032,
+          "p95_mm": 48.33857960500004,
+          "maps": 482,
+          "active_health_failures": []
+        },
+        "recovery": {
+          "median_mm": 12.964103940024032,
+          "p95_mm": 48.33857960500004,
+          "maps": 482,
+          "active_health_failures": []
+        }
+      },
+      "legacy_native_detections": [
+        {
+          "t": 2556.547740779,
+          "rules": "velocity_contradiction"
+        }
+      ],
+      "recovery_events": [
+        {
+          "sample_t": 2556.547740779,
+          "available": 2556.547744853,
+          "state": "bridging",
+          "previous_state": "healthy",
+          "reasons": [
+            "velocity_contradiction",
+            "increment_velocity_disagreement",
+            "released_fusion_motion_disagreement"
+          ],
+          "translation_used": false,
+          "bridge_started": 2556.547744853,
+          "gyro_retained": true,
+          "maximum_bridge_s": 0.4
+        },
+        {
+          "sample_t": 2556.692442256,
+          "available": 2556.692446941,
+          "state": "healthy",
+          "previous_state": "bridging",
+          "reasons": [],
+          "translation_used": true,
+          "bridge_started": null,
+          "gyro_retained": true,
+          "maximum_bridge_s": 0.4
+        }
+      ],
+      "prefix_equal": true,
+      "qualification": "Already inspected development recordings. Source release order and frozen reference retained. Recorded braking remains in the data; this is not a counterfactual successful continuation."
+    },
+    {
+      "campaign": "curve-pilot-f02b4f1b3a7a",
+      "scores": {
+        "baseline": {
+          "median_mm": 13.374301498074779,
+          "p95_mm": 35.36867389981556,
+          "maps": 743,
+          "active_health_failures": []
+        },
+        "recovery": {
+          "median_mm": 13.374301498074779,
+          "p95_mm": 35.36867389981556,
+          "maps": 743,
+          "active_health_failures": []
+        }
+      },
+      "legacy_native_detections": [],
+      "recovery_events": [],
+      "prefix_equal": true,
+      "qualification": "Already inspected development recordings. Source release order and frozen reference retained. Recorded braking remains in the data; this is not a counterfactual successful continuation."
+    },
+    {
+      "campaign": "curve-pilot-032c41b93423",
+      "scores": {
+        "baseline": {
+          "median_mm": 11.523752878942124,
+          "p95_mm": 22.189278747018182,
+          "maps": 389,
+          "active_health_failures": []
+        },
+        "recovery": {
+          "median_mm": 11.523752878942124,
+          "p95_mm": 22.189278747018182,
+          "maps": 389,
+          "active_health_failures": []
+        }
+      },
+      "legacy_native_detections": [],
+      "recovery_events": [],
+      "prefix_equal": true,
+      "qualification": "Already inspected development recordings. Source release order and frozen reference retained. Recorded braking remains in the data; this is not a counterfactual successful continuation."
+    }
+  ],
+  "optical_reference_used_only_after_inference": true
+}

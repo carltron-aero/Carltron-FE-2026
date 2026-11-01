@@ -1,0 +1,30 @@
+{
+  "simultaneous": false,
+  "stationary_same_nominal_placement": true,
+  "modes": [
+    {
+      "name": "binned",
+      "sensor_formats": [
+        "1640x1232-SBGGR10_1X10/RAW - Selected CFE format: 1640x1232-PC1B/RAW"
+      ],
+      "source_fps": 30.00585996794668,
+      "exposure_us": 7996,
+      "output_dimensions": [
+        1100,
+        1100
+      ]
+    },
+    {
+      "name": "full",
+      "sensor_formats": [
+        "3280x2464-SBGGR10_1X10/RAW - Selected CFE format: 3280x2464-PC1B/RAW"
+      ],
+      "source_fps": 20.000112500632817,
+      "exposure_us": 7996,
+      "output_dimensions": [
+        2464,
+        2464
+      ]
+    }
+  ]
+}

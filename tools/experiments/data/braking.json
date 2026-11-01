@@ -1,0 +1,65 @@
+{
+  "campaign": "brake-comparison-6ed697cf4d7c",
+  "groups": [
+    {
+      "duty_percent": 70,
+      "profile": "full",
+      "count": 2,
+      "median": {
+        "optical_prebrake_speed_mps": 1.0126577325276358,
+        "optical_brake_distance_m": 0.1587273117737536,
+        "otos_brake_distance_m": 0.13977742923425834,
+        "optical_distance_before_first_full_brake_m": 0.0006038727342138617,
+        "optical_distance_from_first_full_brake_m": 0.15812343903953974,
+        "optical_peak_yaw_after_decision_deg": 1.7481778601045903,
+        "optical_lateral_change_after_decision_mm": 1.3609664981673544,
+        "optical_effective_deceleration_mps2": 3.2303356729130455
+      }
+    },
+    {
+      "duty_percent": 70,
+      "profile": "pulse60",
+      "count": 2,
+      "median": {
+        "optical_prebrake_speed_mps": 1.0893609665819992,
+        "optical_brake_distance_m": 0.1911723582318855,
+        "otos_brake_distance_m": 0.17920664125360342,
+        "optical_distance_before_first_full_brake_m": 0.0458731635151064,
+        "optical_distance_from_first_full_brake_m": 0.1452991947167791,
+        "optical_peak_yaw_after_decision_deg": 1.7387987376156389,
+        "optical_lateral_change_after_decision_mm": -3.77693355543128,
+        "optical_effective_deceleration_mps2": 3.106040902454547
+      }
+    },
+    {
+      "duty_percent": 75,
+      "profile": "full",
+      "count": 2,
+      "median": {
+        "optical_prebrake_speed_mps": 1.2425284149754314,
+        "optical_brake_distance_m": 0.20236835765712963,
+        "otos_brake_distance_m": 0.18724503230547263,
+        "optical_distance_before_first_full_brake_m": 0.002102315349244932,
+        "optical_distance_from_first_full_brake_m": 0.2002660423078847,
+        "optical_peak_yaw_after_decision_deg": 2.0505905836789537,
+        "optical_lateral_change_after_decision_mm": -2.261105693741377,
+        "optical_effective_deceleration_mps2": 3.8281602408921023
+      }
+    },
+    {
+      "duty_percent": 75,
+      "profile": "pulse60",
+      "count": 1,
+      "median": {
+        "optical_prebrake_speed_mps": 1.2564134319656164,
+        "optical_brake_distance_m": 0.2490862516573873,
+        "otos_brake_distance_m": 0.23579727129085226,
+        "optical_distance_before_first_full_brake_m": 0.052796263944427047,
+        "optical_distance_from_first_full_brake_m": 0.19628998771296025,
+        "optical_peak_yaw_after_decision_deg": 1.194570764860515,
+        "optical_lateral_change_after_decision_mm": -0.9314368767529817,
+        "optical_effective_deceleration_mps2": 3.1687311152662767
+      }
+    }
+  ]
+}

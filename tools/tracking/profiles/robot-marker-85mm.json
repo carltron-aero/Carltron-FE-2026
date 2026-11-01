@@ -1,0 +1,20 @@
+{
+  "format": "carltron-rigid-marker-profile-v1",
+  "profile_id": "robot-marker-85mm-nominal-v1",
+  "dictionary": "DICT_4X4_50",
+  "marker_id": 9,
+  "black_code_dimensions_mm": [85, 85],
+  "plate_dimensions_mm": [100, 100],
+  "nominal_white_margin_mm": 7.5,
+  "code_corners_uv_mm": [[-42.5, 42.5], [42.5, 42.5], [42.5, -42.5], [-42.5, -42.5]],
+  "reference_code_corner_index": 3,
+  "reference_definition": "Canonical bottom-left black-code corner, independent of image rotation; nominally 7.5 mm right and 7.5 mm up from the physical cutout bottom-left",
+  "dimensions_status": "Exact nominal PDF dimensions; actual printed dimensions have not been measured",
+  "measured_black_code_dimensions_mm": null,
+  "printed_surface_height_mm": null,
+  "reference_to_robot_transform": null,
+  "metric_ready": false,
+  "print_pdf": "docs/tracking/markers/Carltron-Robot-Marker-ID9-100mm-A4.pdf",
+  "print_page": 1,
+  "qualification": "Balanced first physical test profile. Metric positions require measured geometry, height-qualified mapping and body transform. Synthetic margin tests do not qualify a real mounted robot target."
+}

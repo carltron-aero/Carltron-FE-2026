@@ -1,0 +1,4 @@
+# PC-side tools, separate from the robot's installed environment.
+numpy>=1.26,<3
+opencv-contrib-python-headless>=4.10,<5
+imageio-ffmpeg>=0.5,<1

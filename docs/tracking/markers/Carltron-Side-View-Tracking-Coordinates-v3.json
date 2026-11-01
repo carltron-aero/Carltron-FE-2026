@@ -1,0 +1,1321 @@
+{
+  "schema_version": 2,
+  "profile": "side-view-v3",
+  "date": "2026-10-03",
+  "team": "Carltron",
+  "dictionary": "DICT_4X4_50",
+  "border_bits": 1,
+  "opencv_version": "4.13.0",
+  "page_size_mm": [
+    210,
+    297
+  ],
+  "marker_size_mm": 140,
+  "page_size_exceptions_mm": {
+    "13": [
+      297,
+      210
+    ],
+    "14": [
+      297,
+      210
+    ]
+  },
+  "coordinate_origin_label": "Near-left inside-wall reference, not old printed white corner",
+  "overlay_origin_label": "Origin: near-left wall reference. +X field right; +Y field far.",
+  "coordinate_convention": "Origin near-left physical inside-wall reference; X right, Y far in the original top view; mm",
+  "reference_geometry_status": "Nominal physical placement targets; installed reference coordinates still need qualification. Not surveyed ground truth.",
+  "nominal_field": {
+    "size_mm": [
+      3000,
+      3000
+    ],
+    "central_min_xy_mm": [
+      1000,
+      1000
+    ],
+    "central_max_xy_mm": [
+      2000,
+      2000
+    ]
+  },
+  "alignment_assumptions": {
+    "outer_end_wall_offset_mm": 3,
+    "centre_based_uniform_shortfall_assumed": true,
+    "basis_outer_long_spans_mm": [
+      2994,
+      2994
+    ],
+    "working_survey_error_allowance_mm": [
+      1,
+      2
+    ],
+    "laser_model_user_reported": "Mileseey S6 100 m",
+    "old_white_origin_in_new_frame_example_mm": [
+      0,
+      3
+    ],
+    "old_to_new_origin_relationship_is_measured": false
+  },
+  "fixed_markers": [
+    {
+      "id": 0,
+      "name": "Outer near left",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 4,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 270,
+      "reference_point_R_on_page_uv_mm": [
+        200,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        0,
+        0
+      ],
+      "reference_description": "REF-line / short paper edge intersection",
+      "marker_center_on_page_uv_mm": [
+        80.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          10,
+          287
+        ],
+        [
+          150,
+          287
+        ],
+        [
+          150,
+          147
+        ],
+        [
+          10,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        217.0,
+        120.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          287,
+          190
+        ],
+        [
+          287,
+          50
+        ],
+        [
+          147,
+          50
+        ],
+        [
+          147,
+          190
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          0,
+          200
+        ],
+        [
+          0,
+          -10
+        ],
+        [
+          297,
+          -10
+        ],
+        [
+          297,
+          200
+        ]
+      ],
+      "mat_check_u_mm": 197,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 1,
+      "name": "Outer near right",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 5,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 90,
+      "reference_point_R_on_page_uv_mm": [
+        10,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        3000,
+        0
+      ],
+      "reference_description": "REF-line / short paper edge intersection",
+      "marker_center_on_page_uv_mm": [
+        130.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          60,
+          287
+        ],
+        [
+          200,
+          287
+        ],
+        [
+          200,
+          147
+        ],
+        [
+          60,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        2783.0,
+        120.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          2713,
+          50
+        ],
+        [
+          2713,
+          190
+        ],
+        [
+          2853,
+          190
+        ],
+        [
+          2853,
+          50
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          3000,
+          -10
+        ],
+        [
+          3000,
+          200
+        ],
+        [
+          2703,
+          200
+        ],
+        [
+          2703,
+          -10
+        ]
+      ],
+      "mat_check_u_mm": 13,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 2,
+      "name": "Outer far right",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 6,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 90,
+      "reference_point_R_on_page_uv_mm": [
+        200,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        3000,
+        3000
+      ],
+      "reference_description": "REF-line / short paper edge intersection",
+      "marker_center_on_page_uv_mm": [
+        80.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          10,
+          287
+        ],
+        [
+          150,
+          287
+        ],
+        [
+          150,
+          147
+        ],
+        [
+          10,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        2783.0,
+        2880.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          2713,
+          2810
+        ],
+        [
+          2713,
+          2950
+        ],
+        [
+          2853,
+          2950
+        ],
+        [
+          2853,
+          2810
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          3000,
+          2800
+        ],
+        [
+          3000,
+          3010
+        ],
+        [
+          2703,
+          3010
+        ],
+        [
+          2703,
+          2800
+        ]
+      ],
+      "mat_check_u_mm": 197,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 3,
+      "name": "Outer far left",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 7,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 270,
+      "reference_point_R_on_page_uv_mm": [
+        10,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        0,
+        3000
+      ],
+      "reference_description": "REF-line / short paper edge intersection",
+      "marker_center_on_page_uv_mm": [
+        130.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          60,
+          287
+        ],
+        [
+          200,
+          287
+        ],
+        [
+          200,
+          147
+        ],
+        [
+          60,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        217.0,
+        2880.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          287,
+          2950
+        ],
+        [
+          287,
+          2810
+        ],
+        [
+          147,
+          2810
+        ],
+        [
+          147,
+          2950
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          0,
+          3010
+        ],
+        [
+          0,
+          2800
+        ],
+        [
+          297,
+          2800
+        ],
+        [
+          297,
+          3010
+        ]
+      ],
+      "mat_check_u_mm": 13,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 4,
+      "name": "Inner near left",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 8,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 270,
+      "reference_point_R_on_page_uv_mm": [
+        210,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        1000,
+        1000
+      ],
+      "reference_description": "Physical short-edge paper corner",
+      "marker_center_on_page_uv_mm": [
+        80.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          10,
+          287
+        ],
+        [
+          150,
+          287
+        ],
+        [
+          150,
+          147
+        ],
+        [
+          10,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        1217.0,
+        1130.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          1287,
+          1200
+        ],
+        [
+          1287,
+          1060
+        ],
+        [
+          1147,
+          1060
+        ],
+        [
+          1147,
+          1200
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          1000,
+          1210
+        ],
+        [
+          1000,
+          1000
+        ],
+        [
+          1297,
+          1000
+        ],
+        [
+          1297,
+          1210
+        ]
+      ],
+      "mat_check_u_mm": null,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 5,
+      "name": "Inner near right",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 9,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 90,
+      "reference_point_R_on_page_uv_mm": [
+        0,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        2000,
+        1000
+      ],
+      "reference_description": "Physical short-edge paper corner",
+      "marker_center_on_page_uv_mm": [
+        130.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          60,
+          287
+        ],
+        [
+          200,
+          287
+        ],
+        [
+          200,
+          147
+        ],
+        [
+          60,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        1783.0,
+        1130.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          1713,
+          1060
+        ],
+        [
+          1713,
+          1200
+        ],
+        [
+          1853,
+          1200
+        ],
+        [
+          1853,
+          1060
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          2000,
+          1000
+        ],
+        [
+          2000,
+          1210
+        ],
+        [
+          1703,
+          1210
+        ],
+        [
+          1703,
+          1000
+        ]
+      ],
+      "mat_check_u_mm": null,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 6,
+      "name": "Inner far right",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 10,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 90,
+      "reference_point_R_on_page_uv_mm": [
+        210,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        2000,
+        2000
+      ],
+      "reference_description": "Physical short-edge paper corner",
+      "marker_center_on_page_uv_mm": [
+        80.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          10,
+          287
+        ],
+        [
+          150,
+          287
+        ],
+        [
+          150,
+          147
+        ],
+        [
+          10,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        1783.0,
+        1870.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          1713,
+          1800
+        ],
+        [
+          1713,
+          1940
+        ],
+        [
+          1853,
+          1940
+        ],
+        [
+          1853,
+          1800
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          2000,
+          1790
+        ],
+        [
+          2000,
+          2000
+        ],
+        [
+          1703,
+          2000
+        ],
+        [
+          1703,
+          1790
+        ]
+      ],
+      "mat_check_u_mm": null,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    },
+    {
+      "id": 7,
+      "name": "Inner far left",
+      "role": "primary",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 11,
+      "page_size_mm": [
+        210,
+        297
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 270,
+      "reference_point_R_on_page_uv_mm": [
+        0,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        1000,
+        2000
+      ],
+      "reference_description": "Physical short-edge paper corner",
+      "marker_center_on_page_uv_mm": [
+        130.0,
+        217.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          60,
+          287
+        ],
+        [
+          200,
+          287
+        ],
+        [
+          200,
+          147
+        ],
+        [
+          60,
+          147
+        ]
+      ],
+      "marker_center_xy_mm": [
+        1217.0,
+        1870.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          1287,
+          1940
+        ],
+        [
+          1287,
+          1800
+        ],
+        [
+          1147,
+          1800
+        ],
+        [
+          1147,
+          1940
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          1000,
+          2000
+        ],
+        [
+          1000,
+          1790
+        ],
+        [
+          1297,
+          1790
+        ],
+        [
+          1297,
+          2000
+        ]
+      ],
+      "mat_check_u_mm": null,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null
+    }
+  ],
+  "supplemental_markers": [
+    {
+      "id": 27,
+      "name": "Shared central near",
+      "role": "optional_shared",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 13,
+      "page_size_mm": [
+        297,
+        210
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 0,
+      "reference_point_R_on_page_uv_mm": [
+        148.5,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        1500,
+        1000
+      ],
+      "reference_description": "Physical long-edge midpoint R",
+      "marker_center_on_page_uv_mm": [
+        148.5,
+        130.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          78.5,
+          200
+        ],
+        [
+          218.5,
+          200
+        ],
+        [
+          218.5,
+          60
+        ],
+        [
+          78.5,
+          60
+        ]
+      ],
+      "marker_center_xy_mm": [
+        1500.0,
+        1130.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          1430.0,
+          1200
+        ],
+        [
+          1570.0,
+          1200
+        ],
+        [
+          1570.0,
+          1060
+        ],
+        [
+          1430.0,
+          1060
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          1351.5,
+          1000
+        ],
+        [
+          1648.5,
+          1000
+        ],
+        [
+          1648.5,
+          1210
+        ],
+        [
+          1351.5,
+          1210
+        ]
+      ],
+      "mat_check_u_mm": null,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null,
+      "installation_guide": {
+        "alignment_edge_on_page_uv_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            297,
+            0
+          ]
+        ],
+        "alignment_edge": "Physical bottom long edge in the PDF view; align with inner blue/white boundary",
+        "centreline_guide_u_mm": 148.5,
+        "centreline_arrow_tip_uv_mm": [
+          148.5,
+          6
+        ],
+        "printed_arrow_to_physical_edge_gap_mm": 6,
+        "nominal_field_centreline_x_mm": 1500,
+        "nominal_inner_boundary_y_mm": 1000,
+        "coordinate_warning": "Printed boundary and centreline are alignment aids, not independently surveyed physical coordinates."
+      }
+    },
+    {
+      "id": 28,
+      "name": "Shared central far",
+      "role": "optional_shared",
+      "dictionary": "DICT_4X4_50",
+      "pdf_page": 14,
+      "page_size_mm": [
+        297,
+        210
+      ],
+      "marker_size_mm": 140,
+      "page_rotation_ccw_deg": 180,
+      "reference_point_R_on_page_uv_mm": [
+        148.5,
+        0
+      ],
+      "reference_point_R_xy_mm": [
+        1500,
+        2000
+      ],
+      "reference_description": "Physical long-edge midpoint R",
+      "marker_center_on_page_uv_mm": [
+        148.5,
+        130.0
+      ],
+      "marker_opencv_order_corners_on_page_uv_mm": [
+        [
+          78.5,
+          200
+        ],
+        [
+          218.5,
+          200
+        ],
+        [
+          218.5,
+          60
+        ],
+        [
+          78.5,
+          60
+        ]
+      ],
+      "marker_center_xy_mm": [
+        1500.0,
+        1870.0
+      ],
+      "opencv_order_corners_xy_mm": [
+        [
+          1570.0,
+          1800
+        ],
+        [
+          1430.0,
+          1800
+        ],
+        [
+          1430.0,
+          1940
+        ],
+        [
+          1570.0,
+          1940
+        ]
+      ],
+      "paper_corners_xy_mm": [
+        [
+          1648.5,
+          2000
+        ],
+        [
+          1351.5,
+          2000
+        ],
+        [
+          1351.5,
+          1790
+        ],
+        [
+          1648.5,
+          1790
+        ]
+      ],
+      "mat_check_u_mm": null,
+      "nominal_z_mm": 0,
+      "measured_reference_R_xy_mm": null,
+      "measured_marker_corners_xy_mm": null,
+      "actual_height_mm": null,
+      "installation_guide": {
+        "alignment_edge_on_page_uv_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            297,
+            0
+          ]
+        ],
+        "alignment_edge": "Physical bottom long edge in the PDF view; align with inner blue/white boundary",
+        "centreline_guide_u_mm": 148.5,
+        "centreline_arrow_tip_uv_mm": [
+          148.5,
+          6
+        ],
+        "printed_arrow_to_physical_edge_gap_mm": 6,
+        "nominal_field_centreline_x_mm": 1500,
+        "nominal_inner_boundary_y_mm": 2000,
+        "coordinate_warning": "Printed boundary and centreline are alignment aids, not independently surveyed physical coordinates."
+      }
+    }
+  ],
+  "supplemental_activation": "Not included in default fitting list. Add only after installation and reference-coordinate verification.",
+  "marker_center_from_paper_R_uv_mm": [
+    105,
+    197
+  ],
+  "marker_opencv_order_corners_from_R_uv_mm": [
+    [
+      15,
+      287
+    ],
+    [
+      195,
+      287
+    ],
+    [
+      195,
+      107
+    ],
+    [
+      15,
+      107
+    ]
+  ],
+  "movable_marker": {
+    "id": 8,
+    "dictionary": "DICT_4X4_50",
+    "pdf_page": 12,
+    "marker_size_mm": 180,
+    "reference_point": "Physical bottom-left A4 paper corner R",
+    "reference_uv_mm": [
+      0,
+      0
+    ],
+    "marker_center_from_reference_uv_mm": [
+      105,
+      197
+    ],
+    "fit_role": "Held-out validation only",
+    "actual_height_mm": null,
+    "note": "A4 test sheet, not a confirmed final robot marker plate design."
+  },
+  "lens_calibration_board": {
+    "pdf_page": 15,
+    "dictionary": "DICT_4X4_50",
+    "squares_x": 5,
+    "squares_y": 7,
+    "square_length_mm": 36,
+    "marker_length_mm": 24,
+    "marker_ids": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "legacy_pattern": false,
+    "board_bottom_left_on_page_uv_mm": [
+      15,
+      22.5
+    ],
+    "native_opencv_chessboard_corners_mm": [
+      [
+        36.0,
+        36.0,
+        0.0
+      ],
+      [
+        72.0,
+        36.0,
+        0.0
+      ],
+      [
+        107.99999237060547,
+        36.0,
+        0.0
+      ],
+      [
+        144.0,
+        36.0,
+        0.0
+      ],
+      [
+        36.0,
+        72.0,
+        0.0
+      ],
+      [
+        72.0,
+        72.0,
+        0.0
+      ],
+      [
+        107.99999237060547,
+        72.0,
+        0.0
+      ],
+      [
+        144.0,
+        72.0,
+        0.0
+      ],
+      [
+        36.0,
+        107.99999237060547,
+        0.0
+      ],
+      [
+        72.0,
+        107.99999237060547,
+        0.0
+      ],
+      [
+        107.99999237060547,
+        107.99999237060547,
+        0.0
+      ],
+      [
+        144.0,
+        107.99999237060547,
+        0.0
+      ],
+      [
+        36.0,
+        144.0,
+        0.0
+      ],
+      [
+        72.0,
+        144.0,
+        0.0
+      ],
+      [
+        107.99999237060547,
+        144.0,
+        0.0
+      ],
+      [
+        144.0,
+        144.0,
+        0.0
+      ],
+      [
+        36.0,
+        179.99998474121094,
+        0.0
+      ],
+      [
+        72.0,
+        179.99998474121094,
+        0.0
+      ],
+      [
+        107.99999237060547,
+        179.99998474121094,
+        0.0
+      ],
+      [
+        144.0,
+        179.99998474121094,
+        0.0
+      ],
+      [
+        36.0,
+        215.99998474121094,
+        0.0
+      ],
+      [
+        72.0,
+        215.99998474121094,
+        0.0
+      ],
+      [
+        107.99999237060547,
+        215.99998474121094,
+        0.0
+      ],
+      [
+        144.0,
+        215.99998474121094,
+        0.0
+      ]
+    ],
+    "chessboard_corners_on_page_uv_mm": [
+      [
+        51.0,
+        238.5
+      ],
+      [
+        87.0,
+        238.5
+      ],
+      [
+        122.99999237060547,
+        238.5
+      ],
+      [
+        159.0,
+        238.5
+      ],
+      [
+        51.0,
+        202.5
+      ],
+      [
+        87.0,
+        202.5
+      ],
+      [
+        122.99999237060547,
+        202.5
+      ],
+      [
+        159.0,
+        202.5
+      ],
+      [
+        51.0,
+        166.50000762939453
+      ],
+      [
+        87.0,
+        166.50000762939453
+      ],
+      [
+        122.99999237060547,
+        166.50000762939453
+      ],
+      [
+        159.0,
+        166.50000762939453
+      ],
+      [
+        51.0,
+        130.5
+      ],
+      [
+        87.0,
+        130.5
+      ],
+      [
+        122.99999237060547,
+        130.5
+      ],
+      [
+        159.0,
+        130.5
+      ],
+      [
+        51.0,
+        94.50001525878906
+      ],
+      [
+        87.0,
+        94.50001525878906
+      ],
+      [
+        122.99999237060547,
+        94.50001525878906
+      ],
+      [
+        159.0,
+        94.50001525878906
+      ],
+      [
+        51.0,
+        58.50001525878906
+      ],
+      [
+        87.0,
+        58.50001525878906
+      ],
+      [
+        122.99999237060547,
+        58.50001525878906
+      ],
+      [
+        159.0,
+        58.50001525878906
+      ]
+    ],
+    "note": "Native OpenCV board coordinates retained explicitly; do not load v1 board dimensions."
+  },
+  "optional_apriltag_target": {
+    "pdf_page": 16,
+    "dictionary": "DICT_APRILTAG_36h11",
+    "id": 8,
+    "marker_size_mm": 180,
+    "marker_center_from_reference_uv_mm": [
+      105,
+      197
+    ],
+    "enabled": false,
+    "note": "Use instead of page 12; requires separate family detection, not enabled by track_marker_video.py."
+  },
+  "legacy_artifacts_sha256": {
+    "Carltron-Tracking-Marker-Pack-A4.pdf": "9c158764b1b19fe3c7a2102a0f6d801492e96228c0ca1ef5eccd184a4bfc7b7a",
+    "Carltron-Tracking-Marker-Coordinates.json": "a72e1af5647b4db40268c5bc8ec5c46eb116795f80eb59b9cfbc6eba02723d66",
+    "Carltron-Side-View-Tracking-Pack-A4-v2.pdf": "ffc3ff80791fbb8d77ef32ce330953fba7089ed0153f0bafbefe141bf75d348b",
+    "Carltron-Side-View-Tracking-Coordinates-v2.json": "eebb622170fa5c02dcfcc1d0fe05d2237e18a5621a4016adf6ef8aa40c86eb10"
+  },
+  "sources": {
+    "measurement_record": "docs/international/mat-measurements-2026-10-03.json",
+    "layout_plan": "docs/international/side-view-tracking-reference-plan.md",
+    "marker_research": "Carltron-Tracking-Marker-Research-2026-10-03.json"
+  },
+  "limits": [
+    "1-2 mm is a user-estimated working allowance, not certified accuracy.",
+    "Planar homography alone does not correct lens distortion or elevated marker parallax.",
+    "Spatial overlap does not establish synchronized exposure times.",
+    "Markers are private test instrumentation, not competition navigation features."
+  ]
+}

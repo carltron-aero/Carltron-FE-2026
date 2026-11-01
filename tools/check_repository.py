@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -12,16 +13,28 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = {".git", ".venv", "venv", "__pycache__", "logs", "tmp"}
+EXCLUDED = {".git", ".venv", ".venv-tracking", ".venv-plots", "venv", "__pycache__",
+            "logs", "tmp", "output", "recordings"}
 LINK = re.compile(r"!?\[[^\]\n]*\]\((<[^>]+>|[^)\n]+)\)")
 
 
 def repository_files() -> list[Path]:
-    return sorted(
-        path for path in ROOT.rglob("*")
-        if path.is_file()
-        and not (set(path.relative_to(ROOT).parts) & EXCLUDED)
-    )
+    def unreadable(error: OSError):
+        raise error
+
+    files: list[Path] = []
+    for directory, folders, names in os.walk(ROOT, onerror=unreadable):
+        folders[:] = [name for name in folders if name not in EXCLUDED]
+        files.extend(Path(directory) / name for name in names)
+    return sorted(files)
+
+
+def reject_nonfinite(value: str):
+    raise ValueError(f"Non-finite JSON number: {value}")
+
+
+def parse_json(content: str):
+    return json.loads(content, parse_constant=reject_nonfinite)
 
 
 def local_links(path: Path, content: str) -> list[str]:
@@ -56,7 +69,7 @@ def main() -> int:
                 compile(content, str(path), "exec", dont_inherit=True)
                 counts["python"] += 1
             elif suffix == ".json":
-                json.loads(content)
+                parse_json(content)
                 counts["json"] += 1
             else:
                 errors.extend(local_links(path, content))

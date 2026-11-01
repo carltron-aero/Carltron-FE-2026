@@ -1,6 +1,6 @@
 # Competition Runbook
 
-This file is for field use. It covers how to start/stop the robot program, switch radio modes, choose the web UI mode, and recover enough information without internet access.
+These are the commands we use on the installed robot for field testing: starting and stopping the program, switching radio modes, selecting a diagnostic view and retrieving logs. The service and helper names refer to that installation; their source files are not included in this revision. Initial dependencies and manual startup are covered in the [setup guide](../setup.md).
 
 ## Current Default Run
 
@@ -10,9 +10,7 @@ The normal competition program is:
 python3 src/tests/perception_web_test.py
 ```
 
-Current defaults already include the tuned values for LiDAR processing, OTOS scalars/offsets, LiDAR correction, race speeds, unpark, smart parking, collision supervisor, adaptive corridor lookahead, and PWM file descriptor caching. Long commands that only repeat those values are usually unnecessary.
-
-Only pass flags when you intentionally want to override the current default.
+We keep the normal LiDAR, OTOS, navigation, departure, parking and actuator settings in the program defaults. The command above uses those settings; additional flags override them for a particular test. The run manifest records the effective configuration, so a long command repeating every default is unnecessary.
 
 ## Systemd Service
 
@@ -127,11 +125,11 @@ Portal behavior:
 - Start Full WebUI: enables Full stream and disables Lite stream.
 - Camera Preview: toggles `/camera.jpg` generation separately.
 
-Recommended for real runs:
+For driving tests:
 
 - Use Lite WebUI when you need live map/status.
-- Avoid Full WebUI during ranking or high-speed testing.
-- Avoid camera preview during ranking unless you intentionally accept timing overhead.
+- Leave Full WebUI off during high-speed testing: it has previously triggered stale-command speed caps.
+- Enable camera preview only when the test needs it; image encoding adds processing load.
 
 Relevant flags:
 
@@ -155,7 +153,7 @@ For demo screen recording with less performance impact:
 --camera-web-debug-quality 55
 ```
 
-Do not use Full WebUI just because the service is running. Full WebUI has previously caused stale command speed caps during fast runs.
+The service can run with no browser connected. These views are diagnostic tools, not a requirement for autonomous driving.
 
 ## Basic Field Workflow
 

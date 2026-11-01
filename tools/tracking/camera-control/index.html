@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carltron Camera Control</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body>
+<header><div class="brand"><h1>Camera Control</h1><span class="eyebrow">CARLTRON · TRACKING LAB</span></div><div class="connection"><span id="dot"></span><span id="connection">Connecting…</span></div></header>
+<main>
+<section class="view-column">
+  <div class="toolbar"><label>Camera <select id="device" aria-label="Control camera"></select></label><button id="rediscover" title="Rebuild the driver connection and detect cameras without restoring settings or moving the camera">Rediscover cameras</button><button id="refresh">Read settings</button><button id="snapshot">Save snapshot</button></div>
+  <div class="preview"><img id="video" alt="Live preview of the selected control camera" hidden><div id="preview-placeholder"><h2>Live view, linked to the controls</h2><p>The camera selector controls both the preview and all adjustments.<br>No camera movement or settings changes on opening.</p><button id="preview-start" class="accent">Start preview</button></div><div id="preview-info"></div></div>
+  <div class="toolbar preview-tools"><span class="muted">Preview and controls use the same USB camera</span><button id="preview-stop">Stop preview</button><label><input id="crosshair" type="checkbox"> Alignment crosshair</label></div>
+  <div id="crosshair-note" class="muted">Native camera capture: 1920 × 1080 · 30 fps. Linked web preview: 15 fps.</div>
+</section>
+<aside id="settings" aria-label="Camera settings" tabindex="0">
+  <section class="panel" id="preset-panel"><div class="panel-title"><h2>Saved views</h2><span class="badge">Stored on this PC</span></div>
+    <label for="preset">View preset</label><select id="preset" aria-label="View preset"><option value="">Loading saved views…</option></select>
+    <p id="preset-info" class="value-label"></p>
+    <div class="toolbar"><button id="preset-save" disabled>Save current view…</button><button id="preset-restore" disabled>Restore full view…</button></div>
+    <p class="muted">Saving or selecting a view never changes the camera. Restore requires confirmation and includes zoom, focus, pan/tilt and image settings. Views are never restored automatically.</p>
+    <p class="warning">Saved direction is logical camera feedback, not exact mechanical positioning. Recheck reference markers after restoring.</p>
+  </section>
+  <div class="panel-title"><h2>Image &amp; lens controls</h2><span class="badge">Read back from driver</span></div><p class="muted">Sliders apply on release. ± buttons use the camera's minimum step; numeric values apply with Enter or Apply.</p><div id="controls"></div><div id="extended-controls"></div>
+  <div class="toolbar"><button id="export">Export settings</button><label class="button">Load settings<input id="import" type="file" accept="application/json,.json" hidden></label></div>
+  <p class="muted">Settings files restore image and lens controls, not pan/tilt. Snapshots also record logical pan/tilt when available.</p>
+  <div class="panel" id="absolute-panel"><div class="panel-title"><h2>Absolute pan &amp; tilt</h2><span class="badge">Logitech extension</span></div>
+    <p id="absolute-readout" class="value-label">Reading capability…</p><p id="absolute-range" class="muted"></p>
+    <label><input id="absolute-enable" type="checkbox" disabled> Enable absolute movement for this session</label>
+    <div class="absolute-targets">
+      <label>Pan target (degrees)<input id="absolute-pan-slider" type="range" disabled><input id="absolute-pan" type="number" disabled></label>
+      <label>Tilt target (degrees)<input id="absolute-tilt-slider" type="range" disabled><input id="absolute-tilt" type="number" disabled></label>
+    </div>
+    <div class="toolbar"><button id="absolute-copy" disabled>Use reported position</button><button id="absolute-apply" disabled>Move to target</button></div>
+    <p class="warning">Only Move to target sends movement. Driver read-back is not proof of arrival, settling or millimetre precision. Recheck field references after any move.</p>
+  </div>
+  <div class="panel"><div class="panel-title"><h2>Pan &amp; tilt</h2><span class="badge">Bounded jog pulses</span></div>
+    <div class="motion-layout"><div class="dpad"><button data-pan="0" data-tilt="1" class="up" aria-label="Tilt up">↑</button><button data-pan="-1" data-tilt="0" class="left" aria-label="Pan left">←</button><button id="stop" class="stop">STOP</button><button data-pan="1" data-tilt="0" class="right" aria-label="Pan right">→</button><button data-pan="0" data-tilt="-1" class="down" aria-label="Tilt down">↓</button></div>
+    <div class="motion-settings"><label>Jog duration <output id="duration-label">80 ms</output><input id="duration" type="range" min="40" max="400" step="10" value="80"></label><div class="toolbar"><button data-duration="50">Fine · 50 ms</button><button data-duration="80">Normal · 80 ms</button><button data-duration="200">Coarse · 200 ms</button></div><label><input id="keys" type="checkbox" checked> Enable arrow-key movement (default on)</label><p class="muted">Arrow keys move the selected camera; + / − zoom; Esc sends stop. Disabled while editing inputs. Shift gives a longer pulse. Very short pulses may not overcome motor startup. Stop during absolute travel has not been physically verified.</p></div></div>
+    <p class="warning">Changing pan, tilt, zoom or focus can invalidate tracking calibration. Recheck the reference markers afterward.</p>
+  </div>
+  <div class="panel"><div class="panel-title"><h2>Exposure test shortcuts</h2><span class="badge">Manual · nominal shutter time</span></div><div id="exposure-presets" class="toolbar"><button data-exposure="-8">1/256 s</button><button data-exposure="-9">1/512 s</button><button data-exposure="-10">1/1024 s</button><button data-exposure="-11">1/2048 s</button></div><p class="muted">These change exposure only. Add light or adjust gain separately; no automatic test preset is applied.</p></div>
+  <details class="panel"><summary>Research findings &amp; capture limits</summary>
+    <p>1080p30 is the verified capture path. No reproducible PTZ Pro 2-specific FPS unlock was found in SDK, firmware or open-source control research.</p>
+    <ul><li>Smaller USB modes, including 160 × 120, still advertise at most 30 fps.</li><li>2304 × 1296 / 1536 is advertised at 2 fps over raw USB, but Windows rejected capture. Extra optical detail is unverified.</li><li>The Logitech Software Reference Kit supports PTZ integration; no published FPS-unlock feature was found.</li><li>Absolute positioning reports a nominal 1° step on the inspected camera. Keep the camera fixed during tracking.</li><li>Native-mode, RightLight, crop and compression extensions are displayed read-only below. Unknown values are not safe tuning controls.</li><li>Short exposure, steady light, fixed focus and accurate timestamps remain the useful tracking improvements. 30 fps at 2 m/s gives 66.7 mm between samples, not 66.7 mm position error.</li></ul>
+    <p class="muted">Sources: <a href="https://hub.sync.logitech.com/ptzpro2/post/ptz-pro-2-specifications-RSCEBTEYR1WkZ41" target="_blank" rel="noreferrer">Logitech specifications</a> · <a href="https://support.logi.com/hc/en-001/articles/360025127214-PTZ-Pro-2-Firmware-Upgrade" target="_blank" rel="noreferrer">Absolute PTZ update</a> · <a href="https://ir.logitech.com/news/news-details/2016/Logitech-Collaboration-Program-Welcomes-15-New-Technology-Partners/default.aspx" target="_blank" rel="noreferrer">Software Reference Kit</a></p>
+  </details>
+  <details class="panel"><summary>Vendor capabilities · read-only</summary><p class="muted">Raw values, not interpreted firmware versions or sensor model numbers. A writable flag from the camera does not mean this app permits writing it.</p><div id="vendor-info"></div></details>
+  <details class="panel"><summary>Capability details &amp; session log</summary><pre id="diagnostics"></pre></details>
+</aside>
+</main><footer><span id="status" role="status">Loading camera capabilities…</span><span>Local only · no uploads <button id="shutdown">Close app</button></span></footer>
+</body></html>

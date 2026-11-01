@@ -10,10 +10,48 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      MPLBACKEND: Agg
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            tools/tracking/requirements.txt
+            tools/experiments/requirements.txt
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "22"
       - name: Check source and documentation
-        run: python3 tools/check_repository.py
+        run: python tools/check_repository.py
+      - name: Test repository checker
+        run: python -m unittest discover -s tools -p "test_check_repository.py"
+      - name: Install offline analysis dependencies
+        run: python -m pip install -r tools/tracking/requirements.txt -r tools/experiments/requirements.txt
+      - name: Test tracking geometry and replay data
+        run: python -m unittest discover -s tools/tracking -p "test_*.py"
+      - name: Test camera controller with fake devices
+        run: python -m unittest discover -s tools/tracking/camera-control -p "test_server.py"
+      - name: Test replay calculations
+        run: node tools/tracking/run-replay/test_math.cjs
+      - name: Test experiment data validation
+        run: python -m unittest discover -s tools/experiments -p "test_*.py"
+      - name: Verify experiment data hashes
+        run: python tools/experiments/render_figures.py --verify-only
+      - name: Render experiment figures
+        run: python tools/experiments/render_figures.py --output "${{ runner.temp }}/carltron-figures"
+      - name: Test Windows PTZ payload without a camera
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: ./tools/tracking/camera-control/test_absolute.ps1

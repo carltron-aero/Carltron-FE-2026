@@ -1,0 +1,85 @@
+{
+  "format": "carltron-frame-manifest-v1",
+  "images": [
+    {
+      "file": "frames/camera-1-946.jpg",
+      "camera": 1,
+      "original_frame_index": 946,
+      "estimated_run_time_s": -0.009616224999945189,
+      "sha256_original_jpeg": "ad9eda6bd6ca9565751f67bb8b0d7f66ca3bd9ee88695c1072a10366822da655",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-1-1127.jpg",
+      "camera": 1,
+      "original_frame_index": 1127,
+      "estimated_run_time_s": 6.000196775000063,
+      "sha256_original_jpeg": "8cf4cead6867a7bb25c661f80a49d493dcd39d6ca568007796b5013ce65e1a85",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-1-1307.jpg",
+      "camera": 1,
+      "original_frame_index": 1307,
+      "estimated_run_time_s": 12.015023175000124,
+      "sha256_original_jpeg": "0a3202dba4c14435a073c20551ff2314d80e0950cb265666e654c40bd885e76d",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-1-1487.jpg",
+      "camera": 1,
+      "original_frame_index": 1487,
+      "estimated_run_time_s": 18.006587675000105,
+      "sha256_original_jpeg": "52182c3ca265e8295e9e37b330bce4b24d9ac26fde7041ebd3d7678c3b29d7b6",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-1-1608.jpg",
+      "camera": 1,
+      "original_frame_index": 1608,
+      "estimated_run_time_s": 22.014381375000085,
+      "sha256_original_jpeg": "3cdfc54626c402955f6ec2c96d7c88995eb272df247bfe0d54d0d1901b9a57e4",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-2-947.jpg",
+      "camera": 2,
+      "original_frame_index": 947,
+      "estimated_run_time_s": 0.0,
+      "sha256_original_jpeg": "31e9e34de3caab1a964fc2b8a88424309726673710039164540339572c6efa8d",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-2-1128.jpg",
+      "camera": 2,
+      "original_frame_index": 1128,
+      "estimated_run_time_s": 5.999170800000002,
+      "sha256_original_jpeg": "324e484d966d1c0307947587e86fca0857a2d4d97af7f8785144e602bb8ec037",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-2-1307.jpg",
+      "camera": 2,
+      "original_frame_index": 1307,
+      "estimated_run_time_s": 12.014206000000058,
+      "sha256_original_jpeg": "69647723922f9fcef915b37bc90c6fdcbd2f236421752e46ec7411541bbb0a4d",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-2-1487.jpg",
+      "camera": 2,
+      "original_frame_index": 1487,
+      "estimated_run_time_s": 17.99912870000003,
+      "sha256_original_jpeg": "03ae568da1f6ad425719a4543279584a1da928c7bc462870ba4cc49f78966b41",
+      "image_transformed": false
+    },
+    {
+      "file": "frames/camera-2-1607.jpg",
+      "camera": 2,
+      "original_frame_index": 1607,
+      "estimated_run_time_s": 21.999454900000046,
+      "sha256_original_jpeg": "e52202c91966820bc15b971dd660cc77a88fa7555fee76feff359150099544e6",
+      "image_transformed": false
+    }
+  ]
+}

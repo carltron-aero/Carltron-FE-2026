@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carltron · Run replay</title>
+  <link rel="stylesheet" href="/style.css"><script src="/math.js" defer></script><script src="/app.js" defer></script>
+</head>
+<body>
+  <header><h1>Carltron <span>Run replay</span></h1><span class="local">Recorded frames · local only</span></header>
+  <div id="load-status" role="status">Loading recorded run…</div>
+  <main id="viewer" hidden>
+    <section class="workspace">
+      <section class="map-panel" aria-label="Field position comparison">
+        <div class="panel-heading"><h2>Position estimates</h2><span>Rear axle · mm</span></div>
+        <div class="legend" aria-label="Visible map traces">
+          <label class="fused"><input type="checkbox" id="show-fused" checked> Fused log</label>
+          <label class="otos"><input type="checkbox" id="show-otos" checked> OTOS-only log</label>
+          <label class="cam1"><input type="checkbox" id="show-cam1" checked> Camera 1</label>
+          <label class="cam2"><input type="checkbox" id="show-cam2" checked> Camera 2</label>
+        </div>
+        <div class="map-wrap"><svg id="field" viewBox="-235 -165 3470 3410" role="img" aria-label="Three metre field. X right, Y up. Four position sources at the selected time."><g id="field-base"></g><g id="context-paths"></g><g id="trail-paths"></g><g id="current-positions"></g></svg></div>
+        <div class="map-options"><label>Trail <select id="trail"><option value="3">Last 3 seconds</option><option value="1">Last second</option><option value="all">Since start</option></select></label><label><input type="checkbox" id="show-context" checked> Whole-run outline</label><label><input type="checkbox" id="show-artwork" checked> Printed lines</label></div>
+        <div class="marker-key"><label><input type="checkbox" id="show-marker-centres" checked> <span aria-hidden="true">＋</span> Camera marker centres</label><span>● / ◆ = rear axle · cross = 100.72 mm behind</span></div>
+        <div class="table-wrap"><table><thead><tr><th>Source</th><th>X mm</th><th>Y mm</th><th>ΔX / ΔY vs fused</th></tr></thead><tbody id="coordinates"></tbody></table></div>
+        <p class="map-note">Original PDF line geometry, nominal dimensions—not corrected for mat stretch or seams. Camera gaps stay empty.</p>
+      </section>
+      <section class="cameras" aria-label="Recorded camera views">
+        <article class="camera"><div class="panel-heading"><h2>Camera 1 <span id="identity-1"></span></h2><span id="frame-time-1">—</span></div><div class="image-box"><canvas id="image-1" width="1920" height="1080" aria-label="Saved Camera 1 frame at the scrubbed time"></canvas></div><div class="camera-status"><span id="detection-1">—</span><span id="frame-index-1">—</span></div></article>
+        <article class="camera"><div class="panel-heading"><h2>Camera 2 <span id="identity-2"></span></h2><span id="frame-time-2">—</span></div><div class="image-box"><canvas id="image-2" width="1920" height="1080" aria-label="Saved Camera 2 frame at the scrubbed time"></canvas></div><div class="camera-status"><span id="detection-2">—</span><span id="frame-index-2">—</span></div></article>
+      </section>
+    </section>
+    <section class="transport" aria-label="Replay controls">
+      <div class="transport-row"><button id="play" type="button">Play</button><button id="previous" type="button" aria-label="Previous recorded frame">← Frame</button><button id="next" type="button" aria-label="Next recorded frame">Frame →</button><label>Speed <select id="playback"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><output id="time-readout">—</output><span id="phase">—</span><span id="robot-speed">—</span></div>
+      <label class="scrub-label" for="scrubber">Driving portion <span id="range-label"></span></label><input id="scrubber" type="range" min="0" step="0.001" value="0" aria-label="Scrub the driving portion">
+    </section>
+  </main>
+  <footer><span id="sync-status">LED-aligned replay · timing approximate</span><details><summary>Timing & references</summary><div id="provenance"></div></details><span>Space: play/pause · ←/→: one frame</span></footer>
+</body></html>

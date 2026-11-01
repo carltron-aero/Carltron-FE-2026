@@ -1,0 +1,32 @@
+{
+  "format": "carltron-user-reported-external-camera-mounts-v1",
+  "date_local": "2026-10-05",
+  "coordinate_frame": "Original field overview: X right, Y far, origin at the real near-left inside-wall reference used for ID0 alignment.",
+  "measurement_status": "Rough user estimates, not a surveyed optical-centre calibration.",
+  "cameras": [
+    {
+      "physical_camera": 1,
+      "camera_height_above_field_mm": 1720,
+      "estimated_ground_projection_xy_mm": [
+        800,
+        1500
+      ],
+      "source": "Approximate team measurements of optical centre location"
+    },
+    {
+      "physical_camera": 2,
+      "camera_height_above_field_mm": 3000,
+      "estimated_ground_projection_xy_mm": [
+        3050,
+        1500
+      ],
+      "source": "Approximate team measurements of optical centre location",
+      "x_qualification": "3050 mm is an approximate analysis assumption: nominal 3000 mm inside-field width plus approximately 50 mm blue border. Actual mat-edge X and optical-centre position have not been surveyed."
+    }
+  ],
+  "ideal_geometric_floor_projection": "q = Cxy + H/(H-h) * (p-Cxy)",
+  "ideal_geometric_height_correction": "p = Cxy + (H-h)/H * (q-Cxy)",
+  "symbols": "p=true target XY at reported height h; q=target ray projected onto floor; Cxy=vertical ground projection of camera optical centre; H=camera height above floor.",
+  "qualification": "Applicable to a correct camera-ray-to-floor mapping and a known target-centre height. Existing empirical floor mappings still have lens/reference errors; this correction does not remove them. These rough mounts do not certify corrected absolute accuracy.",
+  "live_mapping_modified": false
+}

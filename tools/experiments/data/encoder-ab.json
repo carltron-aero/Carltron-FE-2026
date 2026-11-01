@@ -1,0 +1,508 @@
+{
+  "campaign": "encoder-ab-59ecc9a060a3",
+  "order": [
+    "on",
+    "off",
+    "off",
+    "on"
+  ],
+  "qualifications": [
+    "Two floor legs per condition at 80% duty; descriptive pilot, not an independent sample per frame.",
+    "Read rate is host reads, not the internal optical sample frequency.",
+    "Native ioctl wall time includes kernel scheduling, not an electrical SCL measurement.",
+    "Disabling acquisition jointly removes GPIO events, decoding, estimation and per-edge recording; their individual contributions are not separated.",
+    "Process CPU includes braking and all in-process threads, excludes external LiDAR process and PC tracking.",
+    "Stationary optical endpoint comparison avoids dynamic time-alignment assumptions; empirical marker mapping is not surveyed ground truth.",
+    "Last on-stage ended protectively at tracking_hard_envelope; all four returned home."
+  ],
+  "results": [
+    {
+      "stage": 1,
+      "condition": "on",
+      "metrics": {
+        "successful_host_reads": 103,
+        "host_read_hz": 93.13667403442696,
+        "host_intervals_ms": {
+          "n": 102,
+          "median": 7.279869500052882,
+          "p95": 29.31178710015272,
+          "maximum": 50.27045299993915
+        },
+        "native_attempts": 103,
+        "native_errors": {},
+        "native_ioctl_wall_ms": {
+          "n": 103,
+          "median": 0.536002,
+          "p95": 0.5766074999999999,
+          "maximum": 1.496782
+        },
+        "native_ioctl_thread_cpu_ms": {
+          "n": 103,
+          "median": 0.030927,
+          "p95": 0.05020759999999999,
+          "maximum": 0.110519
+        },
+        "native_return_to_python_ms": {
+          "n": 103,
+          "median": 1.859319,
+          "p95": 17.018843899999997,
+          "maximum": 24.238614
+        },
+        "register_read_host_span_ms": {
+          "n": 103,
+          "median": 2.470283,
+          "p95": 17.614224999999998,
+          "maximum": 24.86167
+        },
+        "bus_lock_wait_ms": {
+          "n": 103,
+          "median": 0.001389,
+          "p95": 0.002148,
+          "maximum": 0.004778
+        },
+        "condition": "on",
+        "segment": "r01_duty_01_forward_0.800_try1",
+        "stop_reason": "optical_endpoint",
+        "comparison_eligible": true,
+        "duty_percent": 80.0,
+        "drive_s": 1.1059016340000198,
+        "first100ms": {
+          "successful_host_reads": 13,
+          "host_read_hz": 130.00000000011823,
+          "host_intervals_ms": {
+            "n": 12,
+            "median": 7.616101499934302,
+            "p95": 12.182294699994143,
+            "maximum": 13.960458999918046
+          },
+          "native_attempts": 13,
+          "native_errors": {},
+          "native_ioctl_wall_ms": {
+            "n": 13,
+            "median": 0.536002,
+            "p95": 0.5681792,
+            "maximum": 0.586169
+          },
+          "native_ioctl_thread_cpu_ms": {
+            "n": 13,
+            "median": 0.028686,
+            "p95": 0.04024839999999997,
+            "maximum": 0.053203
+          },
+          "native_return_to_python_ms": {
+            "n": 13,
+            "median": 2.515506,
+            "p95": 6.018225399999996,
+            "maximum": 7.473406
+          },
+          "register_read_host_span_ms": {
+            "n": 13,
+            "median": 3.128211,
+            "p95": 6.625355799999997,
+            "maximum": 8.080315
+          },
+          "bus_lock_wait_ms": {
+            "n": 13,
+            "median": 0.001537,
+            "p95": 0.0019441999999999997,
+            "maximum": 0.002111
+          }
+        },
+        "encoder_quality_begin": {
+          "edges": 2906,
+          "sequence_anomalies": 3,
+          "invalid_transitions": 2700
+        },
+        "encoder_quality_end": {
+          "edges": 20673,
+          "sequence_anomalies": 16,
+          "invalid_transitions": 13541
+        },
+        "process_cpu": {
+          "before_ns": 2888497601,
+          "after_ns": 4345406495,
+          "window_started_s": 1499.782998973,
+          "window_ended_s": 1501.244388601,
+          "includes_brake_finalization": true,
+          "qualification": "All threads in this process; excludes external LiDAR driver and PC tracking."
+        }
+      },
+      "encoder": {
+        "edges": 17927,
+        "edges_per_s": 16244.915983318919,
+        "same_polarity_consecutive_line_seq": 10864,
+        "same_polarity_near_20khz": 7255,
+        "missing_line_sequence_numbers": 0,
+        "nonincreasing_line_sequence_numbers": 0
+      },
+      "process_cpu_one_core_percent": 99.69339224022423
+    },
+    {
+      "stage": 2,
+      "condition": "off",
+      "metrics": {
+        "successful_host_reads": 154,
+        "host_read_hz": 149.89412749039644,
+        "host_intervals_ms": {
+          "n": 153,
+          "median": 6.663720000005924,
+          "p95": 6.8083975999797985,
+          "maximum": 6.970313000010719
+        },
+        "native_attempts": 154,
+        "native_errors": {},
+        "native_ioctl_wall_ms": {
+          "n": 154,
+          "median": 0.5314085,
+          "p95": 0.5372733,
+          "maximum": 0.550835
+        },
+        "native_ioctl_thread_cpu_ms": {
+          "n": 154,
+          "median": 0.0269445,
+          "p95": 0.041295599999999995,
+          "maximum": 0.056593
+        },
+        "native_return_to_python_ms": {
+          "n": 154,
+          "median": 0.0038425,
+          "p95": 0.09707679999999994,
+          "maximum": 0.316871
+        },
+        "register_read_host_span_ms": {
+          "n": 154,
+          "median": 0.578048,
+          "p95": 0.6962528499999998,
+          "maximum": 0.888169
+        },
+        "bus_lock_wait_ms": {
+          "n": 154,
+          "median": 0.001667,
+          "p95": 0.00230265,
+          "maximum": 0.006166
+        },
+        "condition": "off",
+        "segment": "r01_duty_01_forward_0.800_try1",
+        "stop_reason": "optical_endpoint",
+        "comparison_eligible": true,
+        "duty_percent": 80.0,
+        "drive_s": 1.0273918170000798,
+        "first100ms": {
+          "successful_host_reads": 15,
+          "host_read_hz": 150.00000000013642,
+          "host_intervals_ms": {
+            "n": 14,
+            "median": 6.661468999936915,
+            "p95": 6.722084049886234,
+            "maximum": 6.72547899989695
+          },
+          "native_attempts": 15,
+          "native_errors": {},
+          "native_ioctl_wall_ms": {
+            "n": 15,
+            "median": 0.532779,
+            "p95": 0.5390898,
+            "maximum": 0.549279
+          },
+          "native_ioctl_thread_cpu_ms": {
+            "n": 15,
+            "median": 0.037925,
+            "p95": 0.0432645,
+            "maximum": 0.043926
+          },
+          "native_return_to_python_ms": {
+            "n": 15,
+            "median": 0.004,
+            "p95": 0.007974099999999994,
+            "maximum": 0.011759
+          },
+          "register_read_host_span_ms": {
+            "n": 15,
+            "median": 0.590612,
+            "p95": 0.6270505,
+            "maximum": 0.685021
+          },
+          "bus_lock_wait_ms": {
+            "n": 15,
+            "median": 0.001852,
+            "p95": 0.002748199999999998,
+            "maximum": 0.004018
+          }
+        },
+        "encoder_quality_begin": {
+          "edges": 0,
+          "sequence_anomalies": 0,
+          "invalid_transitions": 0,
+          "acquisition_enabled": false
+        },
+        "encoder_quality_end": {
+          "edges": 0,
+          "sequence_anomalies": 0,
+          "invalid_transitions": 0,
+          "acquisition_enabled": false
+        },
+        "process_cpu": {
+          "before_ns": 2391645689,
+          "after_ns": 2603592769,
+          "window_started_s": 1540.362918122,
+          "window_ended_s": 1541.752427079,
+          "includes_brake_finalization": true,
+          "qualification": "All threads in this process; excludes external LiDAR driver and PC tracking."
+        }
+      },
+      "encoder": {
+        "edges": 0,
+        "edges_per_s": 0.0,
+        "same_polarity_consecutive_line_seq": 0,
+        "same_polarity_near_20khz": 0,
+        "missing_line_sequence_numbers": 0,
+        "nonincreasing_line_sequence_numbers": 0
+      },
+      "process_cpu_one_core_percent": 15.253379903186984
+    },
+    {
+      "stage": 3,
+      "condition": "off",
+      "metrics": {
+        "successful_host_reads": 160,
+        "host_read_hz": 149.77935011648577,
+        "host_intervals_ms": {
+          "n": 159,
+          "median": 6.6642379999848345,
+          "p95": 6.8365532998768686,
+          "maximum": 7.8235000000859145
+        },
+        "native_attempts": 160,
+        "native_errors": {},
+        "native_ioctl_wall_ms": {
+          "n": 160,
+          "median": 0.53189,
+          "p95": 0.5387739500000001,
+          "maximum": 0.549631
+        },
+        "native_ioctl_thread_cpu_ms": {
+          "n": 160,
+          "median": 0.0272775,
+          "p95": 0.03432474999999999,
+          "maximum": 0.040592
+        },
+        "native_return_to_python_ms": {
+          "n": 160,
+          "median": 0.003842,
+          "p95": 0.007803849999999846,
+          "maximum": 0.239426
+        },
+        "register_read_host_span_ms": {
+          "n": 160,
+          "median": 0.580918,
+          "p95": 0.6256400499999999,
+          "maximum": 0.811336
+        },
+        "bus_lock_wait_ms": {
+          "n": 160,
+          "median": 0.001778,
+          "p95": 0.0022645499999999984,
+          "maximum": 0.006648
+        },
+        "condition": "off",
+        "segment": "r01_duty_01_forward_0.800_try1",
+        "stop_reason": "optical_endpoint",
+        "comparison_eligible": true,
+        "duty_percent": 80.0,
+        "drive_s": 1.068238043999827,
+        "first100ms": {
+          "successful_host_reads": 15,
+          "host_read_hz": 150.00000000013642,
+          "host_intervals_ms": {
+            "n": 14,
+            "median": 6.654099000002134,
+            "p95": 6.832767899982173,
+            "maximum": 7.045053999945594
+          },
+          "native_attempts": 15,
+          "native_errors": {},
+          "native_ioctl_wall_ms": {
+            "n": 15,
+            "median": 0.531871,
+            "p95": 0.5423454,
+            "maximum": 0.549631
+          },
+          "native_ioctl_thread_cpu_ms": {
+            "n": 15,
+            "median": 0.02713,
+            "p95": 0.034739,
+            "maximum": 0.037112
+          },
+          "native_return_to_python_ms": {
+            "n": 15,
+            "median": 0.003963,
+            "p95": 0.011555499999999979,
+            "maximum": 0.025426
+          },
+          "register_read_host_span_ms": {
+            "n": 15,
+            "median": 0.583668,
+            "p95": 0.6392331,
+            "maximum": 0.659909
+          },
+          "bus_lock_wait_ms": {
+            "n": 15,
+            "median": 0.001759,
+            "p95": 0.003625799999999996,
+            "maximum": 0.006556
+          }
+        },
+        "encoder_quality_begin": {
+          "edges": 0,
+          "sequence_anomalies": 0,
+          "invalid_transitions": 0,
+          "acquisition_enabled": false
+        },
+        "encoder_quality_end": {
+          "edges": 0,
+          "sequence_anomalies": 0,
+          "invalid_transitions": 0,
+          "acquisition_enabled": false
+        },
+        "process_cpu": {
+          "before_ns": 2405562390,
+          "after_ns": 2626433365,
+          "window_started_s": 1575.222143538,
+          "window_ended_s": 1576.65135659,
+          "includes_brake_finalization": true,
+          "qualification": "All threads in this process; excludes external LiDAR driver and PC tracking."
+        }
+      },
+      "encoder": {
+        "edges": 0,
+        "edges_per_s": 0.0,
+        "same_polarity_consecutive_line_seq": 0,
+        "same_polarity_near_20khz": 0,
+        "missing_line_sequence_numbers": 0,
+        "nonincreasing_line_sequence_numbers": 0
+      },
+      "process_cpu_one_core_percent": 15.454027283819995
+    },
+    {
+      "stage": 4,
+      "condition": "on",
+      "metrics": {
+        "successful_host_reads": 109,
+        "host_read_hz": 98.98951224371466,
+        "host_intervals_ms": {
+          "n": 108,
+          "median": 7.747361000042474,
+          "p95": 22.70359019992156,
+          "maximum": 33.5960800000521
+        },
+        "native_attempts": 109,
+        "native_errors": {},
+        "native_ioctl_wall_ms": {
+          "n": 109,
+          "median": 0.535038,
+          "p95": 0.5592602,
+          "maximum": 0.594668
+        },
+        "native_ioctl_thread_cpu_ms": {
+          "n": 109,
+          "median": 0.030611,
+          "p95": 0.04753319999999999,
+          "maximum": 0.114257
+        },
+        "native_return_to_python_ms": {
+          "n": 109,
+          "median": 4.361269,
+          "p95": 17.3996672,
+          "maximum": 31.860187
+        },
+        "register_read_host_span_ms": {
+          "n": 109,
+          "median": 4.958641,
+          "p95": 18.0152872,
+          "maximum": 32.466632
+        },
+        "bus_lock_wait_ms": {
+          "n": 109,
+          "median": 0.001222,
+          "p95": 0.0021079999999999996,
+          "maximum": 0.00913
+        },
+        "condition": "on",
+        "segment": "r01_duty_01_forward_0.800_try1",
+        "stop_reason": "tracking_hard_envelope",
+        "comparison_eligible": true,
+        "duty_percent": 80.0,
+        "drive_s": 1.101126751000038,
+        "first100ms": {
+          "successful_host_reads": 12,
+          "host_read_hz": 120.00000000010914,
+          "host_intervals_ms": {
+            "n": 11,
+            "median": 9.083336000003328,
+            "p95": 16.911605000018426,
+            "maximum": 21.818459000087387
+          },
+          "native_attempts": 12,
+          "native_errors": {},
+          "native_ioctl_wall_ms": {
+            "n": 12,
+            "median": 0.534844,
+            "p95": 0.55874725,
+            "maximum": 0.576724
+          },
+          "native_ioctl_thread_cpu_ms": {
+            "n": 12,
+            "median": 0.0285455,
+            "p95": 0.03921685,
+            "maximum": 0.040093
+          },
+          "native_return_to_python_ms": {
+            "n": 12,
+            "median": 2.590886,
+            "p95": 11.458013449999992,
+            "maximum": 17.341133
+          },
+          "register_read_host_span_ms": {
+            "n": 12,
+            "median": 3.1899430000000004,
+            "p95": 12.067225199999992,
+            "maximum": 17.970043
+          },
+          "bus_lock_wait_ms": {
+            "n": 12,
+            "median": 0.001963,
+            "p95": 0.00207445,
+            "maximum": 0.002075
+          }
+        },
+        "encoder_quality_begin": {
+          "edges": 0,
+          "sequence_anomalies": 0,
+          "invalid_transitions": 0
+        },
+        "encoder_quality_end": {
+          "edges": 17969,
+          "sequence_anomalies": 191,
+          "invalid_transitions": 11066
+        },
+        "process_cpu": {
+          "before_ns": 2346666491,
+          "after_ns": 3758713028,
+          "window_started_s": 1610.228255545,
+          "window_ended_s": 1611.686564369,
+          "includes_brake_finalization": true,
+          "qualification": "All threads in this process; excludes external LiDAR driver and PC tracking."
+        }
+      },
+      "encoder": {
+        "edges": 18109,
+        "edges_per_s": 16453.542516392707,
+        "same_polarity_consecutive_line_seq": 11084,
+        "same_polarity_near_20khz": 7530,
+        "missing_line_sequence_numbers": 0,
+        "nonincreasing_line_sequence_numbers": 0
+      },
+      "process_cpu_one_core_percent": 96.82767557606597
+    }
+  ]
+}

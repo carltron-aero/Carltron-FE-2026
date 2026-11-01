@@ -1,0 +1,118 @@
+{
+  "campaign": "curve-pilot-c05282da0704",
+  "stop_reason": "otos_brake_envelope",
+  "drive_s": 20.13660286100003,
+  "complete_speed_laps": [
+    1.1,
+    1.2,
+    1.3
+  ],
+  "interrupted_lap_target_mps": 1.4,
+  "translation_quality_events": [],
+  "last_control_time_after_drive_s": 20.116882874999646,
+  "last_pose": {
+    "x": 0.693101284971229,
+    "y": 0.6075636387549805,
+    "heading_deg": 145.69058263275497
+  },
+  "fused_speed_mps": 1.4288877738789652,
+  "reported_otos_speed_mps": 1.3057541284760648,
+  "regulated_target_mps": 1.2,
+  "actual_drive_duty": 0.6352460878761527,
+  "controller_reference_deceleration_mps2": 2.0,
+  "first_governor_reduction_before_brake_s": 0.17977699800030678,
+  "reported_otos_velocity_slope_after_first_reduction_mps2": -0.7274402298086479,
+  "planning_brake_bound_m": 0.3471376872414032,
+  "age_sweep": [
+    {
+      "age_s": 0.0,
+      "distance_m": 0.530604220106879,
+      "branches": [
+        {
+          "curvature": -2.319500928880912,
+          "clearance_m": 0.4806636793637421,
+          "point_m": [
+            0.5193363206362579,
+            1.0739919398431494
+          ]
+        },
+        {
+          "curvature": 0.0,
+          "clearance_m": 0.2548191959933998,
+          "point_m": [
+            0.2548191959933998,
+            0.9066449803269006
+          ]
+        }
+      ]
+    },
+    {
+      "age_s": 0.01,
+      "distance_m": 0.5458930978456686,
+      "branches": [
+        {
+          "curvature": -2.319500928880912,
+          "clearance_m": 0.47649041507947754,
+          "point_m": [
+            0.5235095849205225,
+            1.0886993921004158
+          ]
+        },
+        {
+          "curvature": 0.0,
+          "clearance_m": 0.24219049644756208,
+          "point_m": [
+            0.24219049644756208,
+            0.9152627370125244
+          ]
+        }
+      ]
+    },
+    {
+      "age_s": 0.02,
+      "distance_m": 0.5611819755844583,
+      "branches": [
+        {
+          "curvature": -2.319500928880912,
+          "clearance_m": 0.4717983199697372,
+          "point_m": [
+            0.5282016800302628,
+            1.103249633684913
+          ]
+        },
+        {
+          "curvature": 0.0,
+          "clearance_m": 0.2295617969017243,
+          "point_m": [
+            0.2295617969017243,
+            0.9238804936981482
+          ]
+        }
+      ]
+    }
+  ],
+  "hard_centre_clearance_m": 0.24,
+  "optical_cross_track_p95_mm": 32.94024643965087,
+  "optical_endpoint_m": [
+    0.5425266222106211,
+    0.8129823878088068
+  ],
+  "fusion_position_timing_sensitivity": [
+    {
+      "shift_s": -0.02,
+      "median_2d_mm": 14.385885511407498,
+      "p95_2d_mm": 40.17888751314599
+    },
+    {
+      "shift_s": 0.0,
+      "median_2d_mm": 16.574252114701224,
+      "p95_2d_mm": 44.735232021352495
+    },
+    {
+      "shift_s": 0.02,
+      "median_2d_mm": 37.71729681986264,
+      "p95_2d_mm": 67.77233039648551
+    }
+  ],
+  "qualification": "Last successful control state, frozen empirical braking lookup, held-curvature and straight-slide hypotheses. Exact watchdog trip state was not separately recorded. Source-rate or status failure is not implied by the inherited otos_brake_envelope name. A reference deceleration ramp is not a measured physical deceleration guarantee."
+}
