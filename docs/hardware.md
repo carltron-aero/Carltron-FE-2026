@@ -20,4 +20,12 @@ The current PWM mapping is channel 0 for steering, channel 1 for an LED output, 
 
 We positioned the camera to see obstacle colours around the robot while keeping its viewpoint below the wall tops. OTOS needs a clear view of the floor, with height, orientation, scale calibration and dust on the window all affecting its readings. We include each sensor's mounting offset in the position calculation and use the odometry history to account for movement during a LiDAR scan.
 
-The [models](../models/), [schemes](../schemes/) and [vehicle photograph](../v-photos/) folders don't yet contain the corresponding assets. The table above describes the German-final hardware used by the included program. We later installed the Pololu #4841 and tested a replacement OTOS at several heights, as described in the [drivetrain](testing/drivetrain.md) and [OTOS tests](testing/otos.md). The defaults in this source tree still describe the earlier configuration.
+The [models](../models/) and [schemes](../schemes/) folders don't yet contain the manufacturing and wiring files. The table above describes the German-final hardware used by the included program. We later installed the Pololu #4841 and tested a replacement OTOS at several heights, as described in the [drivetrain](testing/drivetrain.md) and [OTOS tests](testing/otos.md). The defaults in this source tree still describe the earlier configuration.
+
+## Bodywork
+
+The outer shell comes off to give us access to the electronics and drivetrain. With the shell fitted, the front and rear light strips make the robot's status visible from outside. The [vehicle photographs](../v-photos/) show both configurations.
+
+We use computational fluid dynamics (CFD) to compare bodywork shapes and see how the air flows around the shell and LiDAR housing.
+
+![Simulated airflow around the robot's bodywork](figures/bodywork-airflow.png)

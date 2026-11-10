@@ -1,8 +1,10 @@
 # Carltron Future Engineers 2026
 
+![Team Carltron's robot with its international bodywork and front light illuminated](v-photos/international-front.jpg)
+
 This is the Future Engineers project repository by Team Carltron for the 2026 World Robot Olympiad International Final in Puerto Rico. Our starting point is the robot we used at the German final, where we achieved second place and qualified for the International Final. It uses front-wheel steering, rear-wheel drive, optical odometry, a scanning LiDAR, and an upward-facing wide-angle color camera.
 
-For the international competition, we want to make the robot faster while keeping it reliable. Before changing the drivetrain and navigation, we built Optical Motion Tracking to compare the robot's position estimates with a separate measurement. Since then, we have fitted a replacement motor, added sensor recording and tested different sensor mounts and controllers. The [testing and development pages](docs/testing/README.md) describe that work. The competition source here is still the version from the German final, with the newer controllers being tested separately.
+For the international competition, our priorities are reliability and speed. We fitted a replacement motor, added sensor recording and tested different sensor mounts and controllers. The [testing and development pages](docs/testing/README.md) describe that work.
 
 ## Repository contents
 
@@ -14,16 +16,15 @@ For the international competition, we want to make the robot faster while keepin
 | [docs/setup.md](docs/setup.md) | Software environment, hardware prerequisites, and startup procedure. |
 | [docs/hardware.md](docs/hardware.md) | Baseline hardware, sensor arrangement and actuator configuration. |
 | [docs/operations](docs/operations/) | Field operation, command-line flags, calibration procedures, and troubleshooting. |
-| [docs/tracking](docs/tracking/) | Optical motion tracking system, validation results, tutorial and printable targets. |
 | [docs/testing](docs/testing/) | Sensor and drivetrain tests, the approaches we tried and the results. |
-| [tools/tracking](tools/tracking/) | Optical motion tracking tools for PC-side camera control, marker analysis, field registration and run replay. |
 | [tools/experiments](tools/experiments/) | Selected measurement data and the script used to generate the figures. |
 | [models](models/) | Location for mechanical models and manufacturing files. |
 | [schemes](schemes/) | Location for circuit diagrams and board documentation. |
-| [t-photos](t-photos/) and [v-photos](v-photos/) | Locations for team and vehicle photographs. |
+| [v-photos](v-photos/) | International bodywork and six chassis views with component callouts. |
+| [t-photos](t-photos/) | Team photograph. |
 | [video](video/) | Location for links and descriptions of autonomous driving demonstrations. |
 
-The production entry point retains its existing filename, `src/tests/perception_web_test.py`, even though it is the normal hardware runner rather than a unit test. Historical controller experiments and duplicate driver copies are not included in this baseline. The runtime imports the production package from `src/prod`, keeping the software layout consistent with the existing robot installation.
+The robot starts through `src/tests/perception_web_test.py`. That entry point imports the production package from `src/prod`, matching the layout on the robot.
 
 ## Sensors and electronics
 
@@ -41,7 +42,7 @@ We then compare the observed walls with the field model and correct the relation
 
 For obstacles, we also need information to persist beyond a single scan. We store detections in a map of field-related slots and use the first obstacle lap to confirm their positions and colors. Confirmed passing decisions can then be locked for later laps instead of being reconsidered from every new observation. Navigation builds waypoints from this map and steers toward a lookahead target. Speed caps, observation holds and recovery states handle situations where the available information does not yet support continuing normally.
 
-The Open Challenge uses the same localisation and control without obstacle passing. During the first lap, we classify the corridor geometry so later laps can use a shorter inner route. The Obstacle Challenge adds the obstacle map, colour confirmation and departure from the parking area, followed by parking after the laps. The included parking sequence is still the German-final version. We haven't yet included the international parallel-parking replacement.
+The Open Challenge uses the same localisation and control without obstacle passing. During the first lap, we classify the corridor geometry so later laps can use a shorter inner route. The Obstacle Challenge adds the obstacle map, colour confirmation and departure from the parking area, followed by parking after the laps.
 
 ## Motor and steering control
 
@@ -63,7 +64,7 @@ python3 src/tests/perception_web_test.py
 
 The program uses the physical start/deadman input by default and can actuate the robot. Before testing on the ground, check the start input and shutdown path with the wheels lifted, and make sure no second process is controlling the same hardware.
 
-The [setup guide](docs/setup.md) covers Python dependencies, ROS, libcamera and device access. The [runbook](docs/operations/runbook.md) covers the installed service and radio-mode helpers. The service and wrapper files are not included in this revision, so starting an already prepared robot and building a fresh Pi installation are not yet equivalent procedures.
+The [setup guide](docs/setup.md) covers Python dependencies, ROS, libcamera and device access. The [runbook](docs/operations/runbook.md) covers the installed service and radio-mode helpers.
 
 The German-final program requests OTOS polling at 150 Hz, command application to DriveBase at 75 Hz and the inner DriveBase controller at 100 Hz. These are scheduling targets, not guaranteed real-time rates. The [flag guide](docs/operations/main-script-flags.md) explains the command-line settings defined in `robot_core/perception.py`. Each run's manifest records the settings used.
 
@@ -71,7 +72,7 @@ The German-final program requests OTOS polling at 150 Hz, command application to
 
 We use the web portal to inspect telemetry, the map and camera previews during development. The robot can navigate without it. During fast runs, the extra load of Full WebUI has caused commands to become stale and trigger speed limits. We therefore also have a lighter map and status view, with detailed logs available for analysis afterwards.
 
-Each run can create timestamped CSV logs and a manifest containing its settings. Important files include `drive_debug.csv`, `lidar_scan_debug.csv`, `camera_color_debug.csv` and `obstacle_slot_debug.csv`. Our analysis scripts cover drive timing, LiDAR alignment, colour classification and odometry calibration. We keep the large raw archives outside Git and include selected observations and results from one paired run in the tracking example.
+Each run can create timestamped CSV logs and a manifest containing its settings. Important files include `drive_debug.csv`, `lidar_scan_debug.csv`, `camera_color_debug.csv` and `obstacle_slot_debug.csv`. Our analysis scripts cover drive timing, LiDAR alignment, colour classification and odometry calibration.
 
 The included test tools cover OTOS calibration, speed calibration, steering-center adjustment, low-speed driving, LED checks, and color-classifier cases. The synthetic color test does not require camera hardware, but it does require NumPy and OpenCV:
 
@@ -87,17 +88,9 @@ python3 tools/check_repository.py
 
 These checks compile Python source without running it, parse JSON configuration, check local documentation links and verify the README length. The validation workflow runs them as well. They catch errors in the repository, while driving performance still needs physical testing.
 
-## Optical Motion Tracking
-
-To measure localisation accuracy, we needed a reference separate from the robot's own sensors. We built Optical Motion Tracking using two cameras, fixed field markers and an 85 mm ArUco marker on a 100 mm plate behind the robot. We use the images to calculate its position and heading and compare them with the onboard logs.
-
-![Optical motion tracking with decoded field references and the robot marker outlined](docs/tracking/images/camera-1-detections.jpg)
-
-We map each camera view into measured field coordinates and account for perspective, lens distortion and marker height. Only stationary references are used to fit the spatial mapping. The first comparison was recorded without sending positions to the robot. We later added an API for test initialisation, repositioning and safety checks. During the experimental fusion laps, moving optical positions don't correct navigation, and the competition program runs without the tracking system.
-
-At one stationary placement that wasn't used to fit the map, the cameras differed by about 1.06 mm. The placement itself had about 1.5 mm uncertainty. Moving comparisons still showed larger differences, with timing a significant unresolved part of the error. The [tracking overview](docs/tracking/README.md) explains the setup and first results. The [usage guide](docs/tracking/USAGE.md) includes analysis commands and printable targets.
-
 ## Testing and development
+
+During development, we compare the robot's position estimates with measurements taken independently of its onboard sensors. This gives us a reference when evaluating changes to localisation and driving control.
 
 The faster drivetrain led us to two different OTOS problems. In a four-leg encoder on/off test, we got about 93–99 Hz with encoder acquisition on and about 150 Hz with it off. The native I²C calls stayed short in both cases. Even at the restored read rate, the sensor could still miss movement. We then compared a replacement sensor at different heights and got substantially better straight-line measurements with its window 20 mm above the floor than at 10 or 14 mm.
 
@@ -105,6 +98,8 @@ The [motor and drivetrain tests](docs/testing/drivetrain.md) cover starting, hol
 
 ## Repository status
 
-This revision contains the German-final program, its diagnostic tools, the first tracking analysis and the later test documentation. We haven't yet included an international parallel-parking implementation or a completed MATLAB/Simulink vehicle model. The Pololu motor and newer controllers have been tested separately, with their results documented here. They haven't been integrated into this competition program, and reliable competition driving at 2 m/s hasn't been demonstrated.
+The competition source is based on the German-final program, including its parking sequence. The test notes cover the Pololu motor and newer controllers evaluated during development.
 
-Mechanical CAD, main-board and wiring files, the full vehicle and team photograph set, autonomous challenge video links and the complete boot installation are not included. The linked source, operating guides and measurement example describe the material currently available.
+Mechanical CAD, main-board and wiring files, autonomous challenge video links and the complete boot installation are not included. The [vehicle gallery](v-photos/) shows the international bodywork and details of the chassis that runs this baseline software.
+
+We are preparing an entry for the MathWorks Modeling Award and will share the supporting material here.
